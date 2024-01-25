@@ -1,0 +1,100 @@
+.review_swiper_outer_wrapper{
+    width: calc(100%-100px);
+
+    padding: 0 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.review_swiper_top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 100px);
+    padding: 0 50px;
+}
+
+.review_swiper_title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.review_swiper_top p {
+    color: #F58220;
+    font-size: 35px;
+    font-family: 'Ubuntu';
+    font-weight: 700;
+}
+
+.review_swiper_top a {
+    color: #F58220;
+    font-size: 20px;
+    font-family: 'Ubuntu';
+    font-weight: 400;
+    margin: 0 10px;
+}
+
+.review_swiper_top h1 {
+    color: #6A6C77;
+    font-size: 14px;
+    font-family: 'Ubuntu';
+    font-weight: 400;
+}
+
+
+.review_swiper_btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.review_swiper_wrapper{
+    height: min-content;
+
+    width: calc(100% - 100px);
+    padding: 0 50px;
+    overflow: hidden;
+    font-family: 'Ubuntu', sans-serif;
+    color: #6A6C77;
+}
+
+.review_card_body h2{
+    font-family: 'Ubuntu', sans-serif;
+    color: #6A6C77;
+    justify-content: flex-start;
+    margin: 10px 0 0 0;
+    font-weight: 700;
+
+}
+
+.review_card_body h3{
+    font-family: 'Ubuntu', sans-serif;
+    color: #6A6C77;
+    justify-content: flex-start;
+    margin: 10px 0;
+    font-weight: 400;
+
+}
+
+@media screen and (max-width: 916px) {
+
+    .review_swiper_outer_wrapper{
+        padding: 0;
+    }
+
+    .review_swiper_wrapper{
+        padding: 0 ;
+    }
+
+    .review_swiper_btn{
+        flex-direction: column;
+    }
+
+}

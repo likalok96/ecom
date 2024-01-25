@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+
+.menu_cart_bg{
+    background: rgba(41, 41, 41, 0.5);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    overflow: scroll;
+}
+
+.menu_cart_wrapper{
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    width: 400px;
+    background: white;
+    
+}
+
+.menu_cart_header{
+    height: 64px;
+
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+
+    color: #59595B;
+
+    border-bottom: 1px solid #D3D6D9;
+
+    display: grid;
+    grid-template-columns: 0.9fr 0.1fr;
+    place-content: center;
+    padding: 0 10px 0 20px;
+}
+
+.close{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.close svg{
+    height: 24px;
+    width: 24px;
+}
+
+
+
+.menu_cart_freeship{
+    height: 90px;
+
+    font-family: 'Ubuntu';
+
+
+    display: flex;
+    flex-direction: column;
+
+    margin: 24px 0;
+    padding: 0 20px;
+
+}
+
+.menu_cart_freeship span{
+    height: 20px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    color: #59595B;
+}
+
+.menu_cart_freeship p{
+    height: 36px;
+    margin: 8px 0 16px 0;
+    padding-bottom: 16px;
+    font-family: 'Comfortaa';
+
+    border-bottom: 10px solid #F58220;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 21px;
+    color: #59595B;
+    
+}
+
+.menu_cart_view{
+    padding: 0 20px;
+    margin: 0 0 12px 0 ;
+}
+
+.menu_cart_card{
+    display: flex;
+    flex-direction: row;
+
+    border: 1px solid #D3D6D9;
+    border-radius: 10px;
+
+    padding: 13px;
+}
+
+.menu_cart_card img{
+    height: 80px;
+    width: 80px;
+
+
+}
+
+.menu_brand{
+    font-size: 12px;
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    line-height: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: #F58220;
+    margin: 0 0 4px 0;
+}
+
+.menu_name{
+    font-size: 14px;
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    line-height: 21px;
+    color: #4f4f4f;
+    margin: 0 0 4px 0;
+
+}
+
+.menu_detail{
+    font-size: 12px;
+    font-family: 'Comfortaa';
+    font-weight: 400;
+    color: #4f4f4f;
+    margin: 0 0 4px 0;
+
+}
+
+
+
+
+.menu_bottom{
+    display: grid;
+    grid-template-columns: 0.7fr 0.3fr;
+    margin-top: 18px;
+
+}
+
+.menu_quantity{
+    height: 34px;
+    width: 100px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items:center;
+
+    border: 1px solid #D3D6D9;
+
+}
+
+.menu_quantity p{
+    width: 30px;
+
+    margin: 0;
+
+    font-family: Arial;
+    font-size: 30px;
+    font-weight: 500;
+
+    color: #59595B;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.menu_quantity span{
+    font-size: 12px;
+    font-family: 'Comfortaa';
+    font-weight: 400;
+    color: #59595B;
+    margin: 0;
+
+}
+
+
+
+.menu_subtotal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+.menu_subtotal span{
+    font-size: 14px;
+    font-family: 'Ubuntu';
+    color: #4F4F4F;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    
+}
+
+
+
+.menu_subtotal p{
+    margin: 0;
+    font-family: 'Comfortaa';
+    font-weight: 400;
+    font-size: 10px;
+    text-decoration-line: underline;
+}
+
+.menu_cart_check{
+    padding: 0 20px;
+
+}
+
+.menu_cart_check p{
+    margin: 24px 0;
+}
+
+.menu_cart_checkout{
+
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    font-size: 12px;
+
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+
+    height: 45px;
+    padding: auto;
+    
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid transparent;
+    border-radius: 30px;
+    background: #F58220;
+
+    color: white;
+
+}
+
+.menu_cart_shopping{
+    font-size: 12px;
+    font-family: 'Comfortaa';
+
+    font-weight: 400;
+    letter-spacing: 1px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: underline;
+
+    color: #4F4F4F;
+
+}
+
+.menu_cart_box{
+    height: 72px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+}
+
+.menu_cart_box div{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    place-content: center;
+    place-items: center;
+
+    width: calc(100% - 40px / 3);
+
+    margin: 0 5px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    background: #f7f7f7;
+    color: #4F4F4F;
+
+    font-family: 'Comfortaa';
+    font-weight: 300;
+    font-size: 12px;
+
+
+}
+
+.menu_cart_box svg{
+    height: 21px;
+    width: 21px;
+}
+
+.menu_cart_recom{
+    background: #f6f6f6;
+
+}
+
+.recom_header{
+
+    font-family: 'Ubuntu';
+    font-weight: 700;
+    font-size: 14px;
+    color: #4F4F4F;
+    padding: 20px;
+}

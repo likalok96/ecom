@@ -1,0 +1,33 @@
+.signup_main_wrapper{
+    background: #F7F7F7;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    padding: 40px 0;
+}
+
+.signup_main_wrapper h1{
+margin: 50px 0 70px 0;
+font-family: 'Ubuntu', sans-serif;
+color: #f58220;
+}
+
+.signup_main_wrapper span{
+    display: none;
+    color: red;
+}
+
+.signup_main_wrapper input:invalid[focused='true'] ~ span{
+    display: block;
+    margin: 10px 0;
+}
+
+.form_input_wrapper input:invalid[focused='true'] {
+    border: 1px solid red;
+
+}
+
+.signup_main_wrapper button:disabled {
+    background: grey;
+    color: black;
+    cursor: auto;
+}

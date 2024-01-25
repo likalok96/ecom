@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Ubuntu:wght@300;400;500;700;900&display=swap');
+
+
+.account_main_wrapper{
+    padding: 0 50px;
+    margin: 60px 0 90px 0;
+}
+
+.account_nav{
+    width: 100%;
+    max-width: 300px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.account_info{
+    padding: 30px;
+    background: #f7f7f7;
+    border-top: 5px solid #4f4f4f;
+    border-radius: 0 0 10px 10px;
+
+}
+
+.account_info p {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin:  0 0 15px 0 ;
+
+    color: #4f4f4f;
+
+}
+
+.account_info span {
+    font-family: 'Comfortaa';
+    font-size: 12px;
+    color: #59595B;
+    font-weight: 400;
+    margin: 0 0 0 10px;
+}
+
+.account_info_email{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.account_nav a{
+    padding: 20px;
+    border-bottom: 2px solid #E7E7E7;
+
+    font-family: 'Ubuntu';
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    color: #4f4f4f;
+}
+
+.signout{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.signout svg{
+    color: #4f4f4f;
+
+}
+
+.account_nav_opt{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 1100px) {
+    .account_nav{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .account_nav_opt{
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        border-bottom: 2px solid #E7E7E7;
+        margin: 0 0 10px 0 ;
+    }
+    .account_nav a{
+        border-bottom: none;
+    }
+
+}
+
+@media screen and (max-width: 780px) {
+
+    .account_nav a{
+        border-bottom: 2px solid #E7E7E7;
+    }
+    .account_nav_opt{
+        flex-direction: column;
+        border-bottom: none;
+    }
+
+}

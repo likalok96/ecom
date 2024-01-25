@@ -1,0 +1,31 @@
+.shop_brand_wrapper{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+}
+
+
+.shop_brand h1{
+    font-family: 'Ubuntu';
+    font-size: 35px;
+    font-weight: 700;
+    color: #f58220;
+    margin: 40px 0;
+
+}
+
+.shop_brand a{
+    font-family: 'Comfortaa';
+    font-size: 14px;
+    font-weight: 400;
+    color: #59595B;
+    margin: 0 0 20px;
+
+    text-decoration: none;
+}
+
+.shop_brand_inner_wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+

@@ -1,0 +1,29 @@
+.account_back{
+    display: none;
+}
+
+@media screen and (max-width: 780px) {
+    .account_back{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background: #f7f7f7;
+    }
+    .account_back p{
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        color: #f58220;
+        font-size: 18px;
+        font-family: 'Ubuntu';
+        font-weight: 700;
+
+        
+    }
+
+
+}

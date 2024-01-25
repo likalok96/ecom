@@ -1,0 +1,136 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap');
+
+.dropdown{
+    display: none;
+    position: fixed;
+
+
+    height: calc(100% - 18.5vh);
+    width: calc(100%);
+    background: green;
+
+    color: #59595B;
+
+    font-family:  'Comfortaa';
+    font-weight: 400;
+    line-height: 14px;    
+
+}
+
+.dropdown.active{
+    display: block;
+    background: rgba(41, 41, 41, 0.5);
+    animation: 0.3s ease 0s 1 slideInFromLeft;
+
+
+    z-index: 2;
+
+}
+
+@keyframes slideInFromLeft {
+    0% {
+      height: 0;
+      transform: translateY(0);
+      opacity: 0;
+      visibility: hidden;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+
+
+.level_1{
+    width: 59%;
+    height: 80%;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid rgba(41, 41, 41, 0.5);
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 1fr 1fr;
+
+
+
+}
+
+.level_1 ul{
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 0 0 10px;
+}
+
+.level_1 h1{
+    font-size: 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid #e7e7e7;
+
+
+    
+}
+
+.level_1 li{
+    margin: 10px 0;
+    font-size: 12px;
+
+}
+
+.level_1 p{
+    margin: 20px 0 0 0 ;
+}
+
+.level_1 a{
+    text-decoration: none;
+    color: #59595B;
+
+}
+
+.level_1 a:hover{
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+.shop_all{
+    font-size: 14px;
+    border-bottom: 1px solid black;
+}
+
+.dropdown_img {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+
+.level_1_brand{
+    width: 59%;
+    height: 80%;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid rgba(41, 41, 41, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.level_2_brand{
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.shop_all_brand{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

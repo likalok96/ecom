@@ -1,0 +1,90 @@
+.discount_outer_wrapper{
+
+    margin-top: 50px;
+    background: #f58220;
+
+    width: 100%;
+}
+
+.discount_main_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 10%;
+}
+
+.discount_text h1{
+    font-size: 35px;
+    font-weight: 900;
+    font-family: 'Ubuntu';
+
+    color: white;
+
+    margin: 0;
+}
+
+.discount_text p{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Comfortaa';
+
+    color: white;
+
+    margin: 10px 0 0 0;
+}
+
+.discount_email_form{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.discount_email input{
+    width: 250px;
+    padding: 18px 55px 20px 18px;
+    
+    border: none;
+    border-radius: 30px;
+
+    color: #4f4f4f;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.discount_email input:focus{
+    border: none;
+    outline-width: 0;
+
+}
+
+.discount_email button{
+    width: 55px;
+    height: 55px;
+
+    background: #4f4f4f;
+
+    border: 1px solid transparent;
+    border-radius: 50%;
+    margin: 0 0 0 -50px;
+    
+}
+
+.discount_email svg{
+    width: 20px;
+    height: 20px;
+
+    color: white;
+
+    margin: 2px 5px 0 0 ;
+
+}
+
+@media screen and (max-width: 670px) {
+
+    .discount_email input{
+        width: 150px;
+
+    }
+
+}
+

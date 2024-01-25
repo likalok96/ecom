@@ -1,0 +1,8 @@
+.banner_wrapper{
+    height: 30%;
+    width: 100%;
+}
+.banner_wrapper img{
+    width: 100%;
+    object-fit: contain;
+}

@@ -1,0 +1,51 @@
+.cart_border{
+    border: 1px solid #E7E7E7;
+    border-radius: 20px;
+}
+
+.order_total{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    border-top: 1px solid #E7E7E7;
+
+    padding: 0 20px;
+}
+
+.order_total p{
+    white-space: pre-wrap;
+    font-weight: 500;
+    font-size: 18px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #4f4f4f;
+}
+
+.order_total span{
+    font-weight: 500;
+    font-size: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #4f4f4f;
+    
+}
+
+.reorder_button {
+    background: #f58220;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 30px;
+
+    padding: 10px;
+
+    margin: 0 20px 0 0;
+}
+
+.reorder_button:hover {
+    cursor: pointer;
+    background: white;
+    border: 1px solid #f58220;
+    color: #f58220;
+}
+
+

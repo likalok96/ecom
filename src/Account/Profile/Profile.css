@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Ubuntu:wght@300;400;500;700;900&display=swap');
+
+.profile_main_wrapper{
+    padding: 0 0 0 60px;
+    width: 100%;
+}
+
+.profile_form p{
+    font-family: 'Ubuntu';
+    font-size: 14px;
+    font-weight: 700;
+    color: #4f4f4f;
+
+    margin: 20px 0 10px 0;
+    
+}
+
+.profile_form input{
+    padding: 13px 20px;
+    width: calc(100% - 60px);
+    height: 25px;
+
+    font-family: 'Comfortaa';
+    font-size: 14px;
+    font-weight: 400;
+    color: #4f4f4f;
+
+    border: 1px solid #DFDFDF;
+    border-radius: 100px;
+}
+
+.profile_form button{
+    margin: 30px 0 0 0;
+    padding: 15px 50px;
+
+    font-family: 'Ubuntu';
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: white;
+
+    background: #F58220;
+
+    border: 1px solid #F58220;
+
+    border-radius: 30px;
+}
+
+.profile_form button:hover{
+    background: white;
+    color: #F58220;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1100px) {
+    .profile_main_wrapper{
+        padding: 0 10px;
+        width: calc(100% - 20px);
+    }
+}

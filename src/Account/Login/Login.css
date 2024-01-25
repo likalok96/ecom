@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Ubuntu:wght@300;400;500;700;900&display=swap');
+
+
+.login_main_wrapper{
+    display: flex;
+    flex-direction: column;
+
+
+    align-items: center;
+    justify-content: center;
+    margin: 10vh 0;
+    
+}
+
+.login_wrapper{
+    display: flex;
+    flex-direction: column;
+
+    height: 620px;
+    width: min-content;
+
+    background: #f7f7f7;
+
+
+
+    border: 1px solid transparent;
+    border-radius: 30px;
+
+
+    margin: auto;
+    padding: 40px;
+
+}
+
+.login_wrapper p{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 35px;
+    font-weight: 900;
+    color: #F58220;
+    margin: 0 0 50px 0;
+}
+
+.login_form{
+    height: min-content;
+    max-width: 500px;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+
+    
+
+
+}
+
+.login_form label{
+    font-family: 'Comfortaa';
+    font-size: 14px;
+    font-weight: 700;
+    color: #4f4f4f;
+}
+
+.login_form input{
+    font-family: 'Comfortaa';
+    font-size: 14px;
+    font-weight: 400;
+    color: #59595B;
+
+
+    height: 34px;
+
+    border: 1px solid #dfdfdf;
+
+    border-radius: 30px;
+    padding: 5px 20px;
+    margin: 10px 0 20px 0;
+}
+
+.login_form button{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    height: 50px;
+    margin: 20px 0;
+    font-weight: 400;
+    letter-spacing: 1px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F58220;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+
+.login_form button:hover{
+    background: white;
+    color: #F58220;
+    border: 1px solid #F58220;
+    cursor: pointer;
+}
+
+
+.login_form button:disabled{
+    background: #e7e7e7;
+    color: #4f4f4f;
+}
+
+.login_form_create{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 0 0 0;
+
+    font-family: 'Comfortaa';
+    font-size: 12px;
+    font-weight: 400;
+    color: #59595B;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+.login_form_create:hover{
+    color: #F58220;
+
+}
+.hr_line{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Comfortaa';
+    font-size: 12px;
+    font-weight: 400;
+    color: #59595B;
+
+    margin: 30px 0;
+
+}
+hr{
+    color: #e7e7e7;
+    width: 45%;
+    
+}
+
+.login_social{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login_social span{
+    font-family: 'Comfortaa';
+    font-size: 14px;
+    font-weight: 700;
+    color: #4f4f4f;
+    margin: 10px 0 20px 0;
+
+}
+
+.login_social_button{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    width: 100%;
+    height: 60px;
+    gap: 10px;
+
+
+
+
+}
+
+.login_social_button button{
+
+    border: 1px solid transparent;
+    border-radius: 30px;
+
+    color: white;
+
+    font-family: 'Comfortaa';
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.login_social_button button:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.facebook{
+    background: #425992;
+}
+
+.google{
+    background: #c85642;
+}
+
+.login_social_button svg{
+    width:30px;
+    height: 30px;
+    margin: 0 2px 2px 0;
+}
+
+@media screen and (max-width: 500px) {
+    .login_social_button{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    
+}

@@ -1,0 +1,13 @@
+runtime: python39
+service: default
+
+env_variables:
+  REACT_APP_API_URL: 'https://server-dot-wnp-ecom.uc.r.appspot.com'
+
+handlers: 
+  - url: /(.*\.(gif|png|jpg|css|js|svg|json)(|\.map))$
+    static_files: build/\1
+    upload: build/(.*)(|\.map)
+  - url: /(.*)
+    static_files: build/index.html
+    upload: build/index.html

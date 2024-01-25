@@ -1,0 +1,168 @@
+.review_outer_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.review_wrapper{
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+
+    font-family: 'Ubuntu', sans-serif;
+    color: #6A6C77;
+}
+
+.review_wrapper ul{
+    padding: 0;
+}
+
+.review_btn{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.review_btn button{
+    width: max-content;    
+    background: #f58220;
+    color: #fff;
+    border: none;
+
+    padding: 10px 20px
+}
+
+.review_btn button:hover{
+    background: var(--light-orange);
+    cursor: pointer;
+}
+
+.review_total{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.review_total p {
+    color: #e7721b ;
+}
+
+.review_option{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.btn_active{
+    color: #f58220;
+}
+
+.review_option p{
+    margin: 0 10px 0 0;
+    cursor: pointer;
+
+}
+
+.review_form input{
+    width: calc(98% - 10px);
+    padding: 5px;
+    margin: 0;
+}
+.review_form textarea{
+    width: calc(98% - 10px);
+    padding: 5px;
+    margin: 0;
+
+}
+
+.review_form_bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.review_form_bottom_option{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 98%;
+
+}
+
+.review_form_bottom_option div {
+    margin: 0 0 20px 20px;
+    width: 25%;
+}
+
+.review_card{
+    display: grid;
+    grid-template-columns: 0.5fr 9fr;
+    width: 100%;
+    gap: 10px;
+    border-bottom: 1px solid #e3e3e3;
+    padding: 20px 0;
+}
+.review_card h2{
+    font-size: 14px;
+}
+
+.review_card_icon h1{
+    display: flex;
+    color: #fff;
+    background: #f1aa76;
+
+    font-size: 20px;
+
+    justify-content: center;
+    align-items: center;
+
+    text-transform: capitalize;
+
+
+    border: 1px solid transparent;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+
+}
+
+.review_card_top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+
+}
+
+.review_card_name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.review_card_name h2{
+    color: #f58220;
+    text-transform: capitalize;
+    margin: 0 5px 0 0 ;
+
+}
+
+.review_card_body h3{
+    font-size: 14px;
+}
+
+.review_card_body a{
+    font-size: 14px;
+    color: #6A6C77;
+    text-decoration: none;
+}
+
