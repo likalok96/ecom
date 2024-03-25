@@ -14,7 +14,7 @@ The <a href="https://github.com/likalok96/ecom_backend" target="_blank">backend<
 
 # React
 - Some Hooks are related to others which make the code hard to follow.
-- Whole Product list is fetch when loading to pages. (Not a problem in this website as list is small.)
+- Whole Product list is fetched when loading to pages. (Not a problem in this website as list is small.)
   Used TanStack query for caching to prevent fetching on every navigation.
   
 
