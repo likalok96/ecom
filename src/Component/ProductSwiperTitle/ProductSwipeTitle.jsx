@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './ProductSwiperTitle.css'
 const ProductSwipeTitle = ({opt, title, category, filterBrand, brandList, setFilterBrand}) => {
 
   return (<div>

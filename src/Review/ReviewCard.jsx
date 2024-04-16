@@ -8,7 +8,7 @@ const ReviewCard = ({reviewRecord}) => {
     const { getProduct} = useContext(ShopContext)
     const productQuery = useQuery({queryKey: ['productList'],queryFn: getProduct});
     const productList = productQuery.data
-    const prd = productList.filter((prd)=>prd.id==reviewRecord.product_id)[0]
+    const prd = productList?.filter((prd)=>prd.id==reviewRecord.product_id)[0]
 
 
 

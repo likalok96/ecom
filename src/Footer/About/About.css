@@ -1,0 +1,39 @@
+.about_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.about_wrapper h1{
+    font-family: 'Ubuntu';
+    color: #f58220;
+    font-weight: 700;
+    font-size: 40px;
+
+}
+
+
+.about_wrapper h2{
+    font-family: 'Ubuntu';
+    color: #f58220;
+    font-weight: 700;
+    font-size: 35px;
+
+}
+
+
+.about_wrapper p{
+    font-family: 'Comfortaa';
+    color: #59595b;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.about_wrapper hr{
+    width: 3px;
+    height: 100px;
+    border: 0;
+    background-color: #f58220;
+}

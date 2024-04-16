@@ -18,6 +18,8 @@
 
 }
 
+
+
 .mainNav_wrapper a{
     color: #4f4f4f;
     text-decoration: none;
@@ -40,358 +42,17 @@ li{
     justify-content: center;
 }
 
+.home_img img{
+    width: 100px;
+
+}
+
 .search_wrapper{
     width: 59%;
     height: 81%;
     padding-top: 25px;
     margin: 0 auto;
 
-}
-
-.search_bar {
-    height: 60%;
-    max-height: 54px;
-    width: 100%;
-}
-
-.search_bar input {
-    height: 50%;
-    width: calc(90% - 48px);
-    max-width: 750px;
-    border-radius: 100px;
-    border: 1px solid #D9D9D9;
-    padding: 12px 24px 8px 24px;
-
-    font-size: 18px;
-}
-/*
-.search_bar button{
-    background: transparent;
-    border: none;
-    width: 50px;
-    height: 27px;
-    padding: 12px 24px 8px 24px;
-
-    
-
-}
-*/
-.search_icon  svg{
-    cursor: pointer;
-    margin: 0 0 -5px -60px;
-
-    width: 25px;
-    height: 25px;
-    color: #D9D9D9;
-
-}
-
-.search_result_wrapper{
-    width: calc(50% - 80px);
-    width: 90%;
-    max-width: 750px;
-    height: min-content;
-    position: fixed;
-    z-index: 2;
-
-
-}
-
-
-
-.product_wrapper_search {
-    
-    border: 1px solid transparent;
-
-}
-
-.product_wrapper_search:hover {
-    border: 1px solid rgba(211, 214, 217, 1);
-    border-radius: 20px;
-}
-
-.search_result{
-    max-height: 650px;
-    height: 100%;
-    background: white;
-    box-shadow: 0 0px 2px 0  rgba(0, 0, 0, 0.4);
-    overflow: auto;
-
-
-}
-
-.search_result_grid{
-    height: 650px;
-
-    display: grid;
-    grid-template-columns: 7fr 3fr;
-    
-
-}
-
-.search_result_prd{
-    padding: 20px 20px 20px 40px;
-
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-
-
-}
-.search_result_prd h2{
-    font-size: 16px;
-    font-family: 'Ubuntu';
-    font-weight: 700;
-    color: #f58220;
-    padding: 0 0 10px 0 ;
-    border-bottom: 1px solid #D9D9D9;
-}
-
-.search_result_prd_all {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    cursor: pointer;
-    font-size: 14px;
-    font-family: 'Comfortaa';
-    font-weight: 400;
-    color: #59595b;
-
-    text-decoration: none;
-
-}
-
-.search_result_prd a:hover{
-    color: #f58220;
-    text-decoration: none;
-}
-
-.search_result_prd_grid{
-    width: 100%;
-    height: 500px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    overflow: auto;
-    padding-bottom: 10px;
-    margin: 0 0 10px 0;
-    border-bottom: 1px solid #D9D9D9;
-
-}
-
-.search_prd{
-
-    width: 95%;
-    
-    
-}
-
-.prd_rating {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 10px 0 0 0;
-}
-
-
-
-.search_result_collection{
-    display: flex;
-    flex-direction: column;
-    padding: 20px 30px;
-    background: #FFF9EE;
-}
-
-.search_result_collection h2{
-    font-size: 16px;
-    font-family: 'Ubuntu';
-    font-weight: 700;
-    color: #f58220;
-
-    padding: 0 0 10px 0 ;
-    border-bottom: 1px solid #D9D9D9;
-}
-
-.search_result_collection a{
-    cursor: pointer;
-    font-size: 12px;
-    font-family: 'Comfortaa';
-    font-weight: 400;
-    color: #59595b;
-
-    margin: 0 0 10px 0;
-}
-.search_result_collection_tag {
-    display: flex;
-    flex-direction: column;
-}
-
-.search_record{
-    background: #FFF9EE;
-    padding: 20px 40px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0px 2px 0  rgba(0, 0, 0, 0.4);
-
-}
-
-.search_record h2{
-    font-size: 16px;
-    font-family: 'Ubuntu';
-    font-weight: 700;
-    color: #f58220;
-    margin: 0 0 10px 0;
-    padding: 0 0 10px 0;
-    border-bottom: 1px solid #D9D9D9;
-}
-
-.search_record a{
-    cursor: pointer;
-    font-size: 14px;
-    font-family: 'Comfortaa';
-    font-weight: 400;
-    color: #59595b;
-    margin: 0 0 10px 0;
-    padding: 0;
-    text-decoration: none;
-}
-.search_record a:hover{
-    text-decoration: none;
-
-}
-
-
-
-.search_nav{
-
-
-
-    font-weight: 700;
-    font-size: 15px;
-    font-family: 'Ubuntu', sans-serif;
-    color: #4f4f4f;
-
-    display: flex;
-    align-items: center;
-    z-index: 1;
-
-
-}
-
-.search_nav ul{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    flex-wrap: wrap;
-}
-
-.search_nav li{
-    margin-right: 50px;
-    height: 100%;
-}
-
-.search_nav a{
-    display: flex;
-
-    height: 100%;
-
-}
-
-.search_nav a:hover{
-
-    color: #f58220;
-    text-decoration: none;
-
-}
-
-
-
-.nav_icon{
-    width: 184px;
-    height: 82px;
-
-    display: flex;
-    flex-direction: column;
-
-}
-
-.personal{
-    width: 200px;
-    height: 30px;
-
-    display: flex;
-    flex-direction: row;
-
-    position: relative;
-}
-
-.personal a{
-    width: 60px;
-    display: flex;
-    flex-direction: row;
-}
-
-.personal svg{
-    height: 100%;
-    width: 100%;
-    color: #f58220;
-}
-
-.cart_count{
-    position: relative;
-    top: -5px;
-    left: -25px;
-    border: 1px solid transparent;
-    border-radius: 100%;
-    height: 20px;
-    width: 20px;
-
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: 0;
-
-    background: #f58220;
-    color: white;
-}
-
-.cart_count p{
-    height: 30px;
-    width: 30px;
-
-}
-
-.middle_icon{
-    margin: 0 auto;
-
-}
-
-
-
-.order{
-    width: 184px;
-    height: 52px;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: end;
-
-    font-family: 'Ubuntu';
-    font-weight: 700;
-    font-size: 14px;
-    color: #4f4f4f;
-
-}
-.order a:hover{
-    color: #f58220;
-    text-decoration: none;
 }
 
 .menu {
@@ -409,85 +70,7 @@ li{
 
 }
 
-@keyframes slidein-from-right2 {
-    from {
-        opacity: 1;
-        -webkit-transform:translateX(-100%);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform:translateX(0%);
-    }
-}
 
-
-.search_nav_menu{
-    position: fixed;
-
-    display: none;
-    width: 100%;
-
-
-    color: #59595b;
-    font-family: 'Comfortaa';
-    size: 18px;
-    font-weight: 700;
-
-    background: white;
-
-    z-index: 3;
-
-}
-.search_nav_menu.open{
-    display: block;
-    animation: 0.3s ease 0s 1 slidein-from-right2;
-
-
-}
-
-.open{
-    display: block;
-    animation: 0.3s ease 0s 1 slidein-from-right2;
-
-
-}
-
-
-
-
-.search_nav_menu ul{
-    padding: 0;
-}
-.search_nav_menu li{
-    padding: 0 0 0 40px;
-}
-
-.search_nav_menu a{
-    text-decoration: none;
-
-    padding: 16px 0;
-
-    color: #59595b;
-    font-family: 'Comfortaa';
-    size: 18px;
-    font-weight: 700;
-
-
-
-
-}
-
-.search_nav_menu_list{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-}
-
-.search_nav_menu_list:hover {
-    background: #fff1f0 ;
-    cursor: pointer;
-}
 
 
 
@@ -508,77 +91,55 @@ li{
         width: calc(100% - 20px);
         
     }
-    .search_bar input {
-        width: 90%;
-        max-width: 100%;
-    }
 
-
-
-    .home_img{
-        grid-area: icon;
-    }
-    .nav_icon{
-        grid-area: profile;
-        height: max-content;
-    }
 
     .search_wrapper{
         grid-area: search;
         width: 100%;
     }
-    .search_nav{
-        display: none;
-    }
-    .order{
-        display: none;
+
+
+    .home_img{
+        grid-area: icon;
     }
 
     .menu {
         display: block;
     }
-
-    .search_nav_menu{
-        position: fixed;
-        display: flex;
-        flex-direction: column;
-        
-
-    }
 }
 
-@media screen and (max-width: 700px) {
-    .personal{
-        width: 180px;
+
+@media screen and (max-width: 300px) {
+
+    .search_wrapper{
+        grid-area: search;
+        width: 100%;
+        max-width: 280px;
     }
-    .search_bar input {
-        
-        width: calc(80%);
-        
+
+
+    .home_img{
+        width: 50px;
 
     }
 
-    .search_result_grid{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr;
-    }
-    .search_result_collection {
-        order: -1;
-    }
-    .search_result_collection_tag {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px;
-        overflow: auto;
+    .home_img img {
+        width: 50px;
+
     }
 
 }
 
-@media screen and (max-height: 800px) {
 
-    .search_result_wrapper {
-        height: 70vh;
-        overflow: scroll;
+@media screen and (max-height: 900px) {
+    .search_wrapper{
+        padding: 0;
     }
+
+    .home_img img {
+        width: 50px;
+
+    }
+
 }
+

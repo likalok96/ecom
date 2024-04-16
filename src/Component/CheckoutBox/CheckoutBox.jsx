@@ -1,5 +1,6 @@
 import React from 'react'
 import {TbTruckDelivery} from 'react-icons/tb'
+import './CheckoutBox.css'
 
 const CheckoutBox = ({item, total, checkout}) => {
   const ProgressBar = () => {

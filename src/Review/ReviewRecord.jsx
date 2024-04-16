@@ -1,11 +1,9 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import ReviewCard from './ReviewCard'
-import { ShopContext } from '../Context/ShopContext'
 import ReactPaginate from 'react-paginate'
 
 const ReviewRecord = ({reviewRecord}) => {
 
-//    const {reviewRecord} = useContext(ShopContext)
 
     const [currentPage, setCurrentPage] = useState(0)
 
@@ -15,7 +13,6 @@ const ReviewRecord = ({reviewRecord}) => {
 
     const handlePageChange = (e) => {
         setCurrentPage(e.selected);
-//       window.scrollTo(0, 0)
     };
 
   return (

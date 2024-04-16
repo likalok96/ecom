@@ -88,3 +88,12 @@
 
 }
 
+@media screen and (max-width: 300px) {
+
+    .discount_email input{
+        width: 100px;
+
+    }
+
+}
+

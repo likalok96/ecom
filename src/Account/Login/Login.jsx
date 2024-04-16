@@ -1,60 +1,41 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef  } from 'react'
 import { ShopContext } from '../../Context/ShopContext'
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import './Login.css'
 import {AiOutlineGoogle} from 'react-icons/ai'
 import {BiLogoFacebook} from 'react-icons/bi'
 import useLogin from '../../hook/useLogin';
-import { GoogleLogin } from '@react-oauth/google';
 
 
 const Login = () => {
 
-//    const {auth, setAuth} = useContext(ShopContext);
-
-//    const [user, setUser] = useState({name: '', password: ''});
-
-//    const navigate = useNavigate();
-
-//    axios.defaults.withCredentials = true;
-const {getQuantity,exp,setExp} = useContext(ShopContext);
+const {setExp} = useContext(ShopContext);
 
     const {login, google_login, user , setUser} = useLogin();
     const login2 = (e) =>{
         login(e)
         setExp(true)
     }
-/*
-    const login = (e)=> {
-        e.preventDefault()
-        axios.post(process.env.REACT_APP_API_URL + "/account/login",user)
-        .then(res=>{
-            if(res.data.Status ==='Success') {
-                localStorage.setItem("access-token", res.data.Token)
-//                setAuth(true)
-                navigate("/account")
-            } else {
-                alert(res.data.Message)
-            }
-        })
-        .catch(err=> console.log(err));
-    }
-*/
+
+    const nameRef = useRef()
+    const passwordRef = useRef()
+    useEffect(()=>{
+        nameRef.current.focus()
+    },[])
+
   return (
     <div className='login_main_wrapper'>
         <div className='login_wrapper'>
             <p>Customer Sign In</p>
             <form onSubmit={login2} className='login_form'>
                 <label >Name</label>
-                <input name='name' onChange={(e)=> setUser({...user,name: e.target.value})}></input>
+                <input ref={nameRef} name='name' autoComplete='username' onChange={(e)=> setUser({...user,name: e.target.value})} value={user.name}></input>
 
                 <label >Password</label>
-                <input type='password' name='password' onChange={(e)=> setUser({...user,password: e.target.value})}></input>
+                <input ref={passwordRef} type='password' autoComplete='current-password' name='password' onChange={(e)=> setUser({...user,password: e.target.value})} value={user.password}></input>
 
                 <a className='login_form_create' href="">Forget your password?</a>
-
-                <button disabled={(user.name && user.password ? false: true)} type='submit'>SIGN IN</button>
+                {/* disabled={(user.name && user.password ? false: true)}*/}
+                <button type='submit' disabled={(user.name && user.password ? false: true)}>SIGN IN</button>
 
                 <a className='login_form_create' href="/account/signup">Create account</a>
 

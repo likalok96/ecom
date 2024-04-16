@@ -20,33 +20,86 @@ import Product from '../Main/Product/Product';
 import ProductDetails from '../Main/Product/ProductDetails';
 import Discount from '../Footer/Discount';
 import Contact from '../Footer/Contact';
-import MainMune from '../Component/MainMune';
+import MainMune from '../Component/MainMune/MainMune';
 import Brand from '../Main/Brand/Brand';
 import Review from '../Review/Review';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import SearchNav from '../Component/SearchNav/SearchNav';
+import StickyNav from '../Header/StickyNav/StickyNav';
+import SearchResult from '../Component/SearchResult/SearchResult';
+import About from '../Footer/About/About';
+import Wishlist from '../Main/Wishlist/Wishlist';
+
 
 const google_client_id = '1087005348930-mljeqbal7qquh9kssbof6hvmeb9nagnt.apps.googleusercontent.com'
 
 
 const Router = () => {
+
+
     const [show, setShow] = useState('');
     const [showMenu, setShowMenu] = useState(false)
+    const [showSearch, setShowSearch] = useState(false)
 
+    const showContent = (!showMenu && !showSearch || ( ( window.innerWidth > 800 ) && ( window.innerHeight > 600 )))
+/*
+    const meadiaQuery = window.matchMedia("(max-width: 1000px)");
+    const [showNav, setShowNav] = useState(true)
+    const [lastScrollY, setLastScrollY] = useState(window.scrollY);
+    const [windowSize, setWindowSize] = useState(meadiaQuery.matches);
 
+    const navCheck = ()=>{
+        if (window.scrollY > lastScrollY && windowSize && window.scrollY>200) { 
+          setShowNav(false); 
+  
+        } else { 
+  
+          setShowNav(true);  
+        }
+    
+        setLastScrollY(window.scrollY); 
+      }
+
+    useEffect(()=>{
+        window.matchMedia("(max-width: 1000px)").addEventListener('change', (e)=>setWindowSize(e.matches));
+        return ()=>{
+            window.matchMedia("(max-width: 1000px)").removeEventListener('change', (e)=>setWindowSize(e.matches));
+        }
+    },[])
+
+    useEffect(()=>{
+
+      
+      window.addEventListener('scroll', navCheck);
+      
+
+      return () =>{
+        //window.matchMedia("(max-width: 1000px)").removeEventListener('change', (e)=>setWindowSize(e.matches));
+        window.removeEventListener('scroll', navCheck);
+      }
+
+    },[lastScrollY])
+*/
 
 console.log('route')
   return (
     
       
     <GoogleOAuthProvider clientId={google_client_id}>
-    <ShopContextProvider>
+    <ShopContextProvider >
         <BrowserRouter>
-        <div className='sticky_nav'>
+        {/*<div className={showNav ? 'sticky_nav' : 'sticky_nav sticky_nav_hide'}>
             <TopNav />
-            <MainNav setShow={setShow} show={show} showMenu={showMenu} setShowMenu={setShowMenu} />
-        </div>
+            <MainNav setShow={setShow} show={show} showMenu={showMenu} setShowMenu={setShowMenu} showNav={showNav}/>
+            {/*<div className='mainNav_wrapper'>
+            
+              <SearchNav setShow={setShow}/>
+            
+            </div>
+            
+        </div>*/}
+        <StickyNav setShow={setShow} show={show} showMenu={showMenu} setShowMenu={setShowMenu} setShowSearch={setShowSearch} showSearch={showSearch}/>
+        <SearchResult setShowSearch={setShowSearch} showSearch={showSearch}/>
         {showMenu ? 
         <div className='sticky_dropdown'>
           <MainMune setShow={setShow} show={show}/>
@@ -59,9 +112,10 @@ console.log('route')
           <li key='Shop by Brand'><Dropdown text='Shop by Brand' show={show} setShow={setShow}/></li>
           
       </div>}
-            <Routes>
+            {(showContent) && <Routes>
                     <Route path='/' element={<App />} />
                     <Route path='/cart' element={<Cart />} />
+                    <Route path='/wishlist' element={<Wishlist />} />
                     <Route path='/cartmenu' element={<MenuCart />} />
                     <Route path='/account/signup' element={<Signup />} />
                     <Route path='/account/login' element={<Login />} />
@@ -78,18 +132,19 @@ console.log('route')
                     <Route path='/collection/brand/:brand' element={<Product />} />
                     <Route path='/brand' element={<Brand />} />
 
-                    
-
+              
 
                     <Route path='/product/:brand/:product' element={<ProductDetails />} />
 
                     <Route path='/review' element={<Review product_id={0} product={false}/>} />
+                    <Route path='/about' element={<About />} />
 
-            </Routes>
+
+            </Routes>}
 
             
-            <Discount />
-            <Contact />
+            {showContent && <Discount />}
+            {showContent && <Contact />}
 
         </BrowserRouter >
     </ShopContextProvider>
@@ -99,6 +154,5 @@ console.log('route')
     
       )
 }
-//<Route path='product' element={<Product />} />
 
 export default Router

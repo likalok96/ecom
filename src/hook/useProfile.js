@@ -1,14 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
+import {  useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { ShopContext } from '../Context/ShopContext';
 import useRefresh from '../RefreshToken/useRefresh';
 
 const useProfile = () => {
 
-    //const {profile, setProfile} = useContext(ShopContext)
 
-    const {logged,axiosInstance} = useRefresh()
+    const {axiosInstance} = useRefresh()
 
     const [profile, setProfile] = useState();
 
@@ -17,7 +14,6 @@ const useProfile = () => {
 
     const navigate = useNavigate()
 
-    axios.defaults.withCredentials = true;
 
     const getProfile = ()=> {
         const token = {token: localStorage.getItem('access-token') || ''}
@@ -44,22 +40,14 @@ const useProfile = () => {
     
     const updateProfile = async (e)=> {
         e.preventDefault();
-//        if (confirm===profile.Password){
-            //try{
+
                 const token = {token: localStorage.getItem('access-token') || ''}
                 axiosInstance.put(process.env.REACT_APP_API_URL + "/account/profile/update",{'profile':profile, 'token':token})
                 .then(()=>{
                     alert('Update Success');
-//                    localStorage.setItem("access-token", '')
-
-
-//                    navigate("/account/login");
                 }
                 ).catch(err=>err)
-            //}catch(err){
-            //    console.log(err)
-            //}
-//        }
+
     }
 
     

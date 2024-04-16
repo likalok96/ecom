@@ -3,6 +3,9 @@
     border: 1px solid transparent;
     border-radius: 30px;
     padding: 40px 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .signup_main_wrapper h1{
@@ -12,10 +15,10 @@ color: #f58220;
 }
 
 .signup_main_wrapper span{
-    display: none;
+    display: block;
     color: red;
 }
-
+/*
 .signup_main_wrapper input:invalid[focused='true'] ~ span{
     display: block;
     margin: 10px 0;
@@ -30,4 +33,19 @@ color: #f58220;
     background: grey;
     color: black;
     cursor: auto;
+}
+*/
+
+.password_eye{
+    position: absolute;
+    margin: 14px 0 0 -50px;
+
+}
+.form_input_wrapper svg{
+    height: 24px;
+    width: 24px;
+}
+
+.form_input_wrapper ::-ms-reveal {
+    display: none;
 }

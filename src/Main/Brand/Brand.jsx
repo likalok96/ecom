@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Brand.css'
 import useProductFilter from '../../hook/useProductFilter'
-import LoadingSpinner from '../../Component/LoadingSpinner'
+import LoadingSpinner from '../../Component/LoadingSpinner/LoadingSpinner'
 
 const Brand = () => {
 

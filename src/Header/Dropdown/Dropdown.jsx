@@ -1,4 +1,4 @@
-import React, { useContext, useState,useEffect } from 'react'
+import React, { useContext } from 'react'
 import './Dropdown.css'
 import { ShopContext } from '../../Context/ShopContext'
 import categoryList from '../../mysql_data/categoryLinks.json'
@@ -6,7 +6,7 @@ import brandList from '../../mysql_data/brandlinks.json'
 import { useQuery } from '@tanstack/react-query'
 
 const Dropdown = ({text,show,setShow}) => {
-    //productList,
+
     const { getProduct} = useContext(ShopContext)
     const productQuery = useQuery({queryKey: ['productList'],queryFn: getProduct});
 
@@ -29,11 +29,7 @@ const Dropdown = ({text,show,setShow}) => {
 
         let set = new Set()
       
-      
         filteredList?.map((prd)=>set.add(prd.brand))
-
-      
-//        console.log([...set])
 
 
         return(
@@ -49,8 +45,6 @@ const Dropdown = ({text,show,setShow}) => {
         )
     }
 
-
-
   return (
     
         <div className={show===text ? 'dropdown active': 'dropdown'}>
@@ -65,8 +59,6 @@ const Dropdown = ({text,show,setShow}) => {
                     </div>
                     
                 </div>
-
-            
             
             : 
 
@@ -75,8 +67,6 @@ const Dropdown = ({text,show,setShow}) => {
             </div>
             }
         </div>
-
-    
 
   )
 }

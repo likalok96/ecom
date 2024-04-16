@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react'
-import { ShopContext } from '../Context/ShopContext'
-import categoryList from '../mysql_data/categoryLinks.json'
-import brandList from '../mysql_data/brandlinks.json'
+import { ShopContext } from '../../Context/ShopContext'
+import categoryList from '../../mysql_data/categoryLinks.json'
 import {AiOutlineArrowLeft,AiOutlineArrowRight} from 'react-icons/ai'
 import { useQuery } from '@tanstack/react-query'
+import './MainMune.css'
 
 const MainMune = ({show,setShow}) => {
 
@@ -36,10 +36,6 @@ const MainMune = ({show,setShow}) => {
       
         filteredList.map((prd)=>set.add(prd.brand))
 
-      
-//        console.log([...set])
-
-
         return(
             
             <ul className={show===cate ? 'open':''}>
@@ -71,7 +67,7 @@ const MainMune = ({show,setShow}) => {
         
         )
     }
-//()=>{setShow(text) setText(text)}
+    
     let search_text = ['First Group', 'Second Group', 'Third Group', 'Shop by Brand', 'On Sale', 'Our Principle']
 
   return (
@@ -80,8 +76,9 @@ const MainMune = ({show,setShow}) => {
         
         <nav className={show==='' ? 'search_nav_menu open':'search_nav_menu'}>
             {show===''&&<ul>
-                {search_text.map((txt)=><List_cate url='' text={txt} onClick={()=>{setShow(txt) 
+                {search_text.slice(0,3).map((txt)=><List_cate url='' text={txt} onClick={()=>{setShow(txt) 
                     setText(txt)}}/>)}
+                {<li className='search_nav_menu_list'><a href={`/brand`} className='search_nav_menu_list' >Shop by Brand</a></li>}
             </ul>}
         </nav>
         

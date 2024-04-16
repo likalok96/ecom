@@ -1,6 +1,7 @@
 import React from 'react'
-import prd1 from '../assests/prd1.png'
-import prd_img from '../mysql_data/productLinks.json'
+import prd1 from '../../assests/prd1.png'
+import prd_img from '../../mysql_data/productLinks.json'
+import './ProductCard.css'
 
 
 const ProductCard = ({prd, addToCart, cart, decreCart, increCart, removeCart })=> {
@@ -18,17 +19,19 @@ const ProductCard = ({prd, addToCart, cart, decreCart, increCart, removeCart })=
 
 
     return (
-    <div className='cart_info cart_grid'>
+    <div className='cart_info cart_grid_card'>
         <div className='cart_info_product text'>
             <img className='cart_info_product_img  ' src={prd.image} alt="img" onError={(e)=>onError(e)}/>
             <div className='cart_info_product_name  '>{prd.brand}  {prd.name}</div>
         </div>
 
         <div className='quan_total'>
+            
             <div className={cart ? 'quantity quantity_border text':'quantity text'}>
-                {cart && <p onClick={()=>decreCart(prd)}>-</p>}
+                {cart && <p className='noselect' onClick={()=>decreCart(prd)}>-</p>}
+                {!cart && <span className='quan_total_header'>Quantity:&nbsp;</span>}
                 <p>{prd.quantity}</p>
-                {cart && <p onClick={()=>increCart(prd)}>+</p>}
+                {cart && <p className='noselect' onClick={()=>increCart(prd)}>+</p>}
             </div>
             <div className='subtotal text'>
                 <div>{(prd.price*prd.quantity).toLocaleString('en-US',{style:'currency', currency: "HKD"})}</div>

@@ -5,6 +5,7 @@
     padding: 60px;
     margin: 0 auto;
     max-width: 1500px;
+    height: 75vh;
 }
 
 .product_image_wrapper{
@@ -196,4 +197,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+@media screen and (max-width: 400px) {
+
+    .product_image{
+        display: none;
+    }
+
+    .product_image_nav img{
+        width: 60px;
+        height: 60px;
+    
+    }
+    
+
+    .product_main_wrapper{
+        padding: 40px 0;
+        gap: 2%;
+    }
 }

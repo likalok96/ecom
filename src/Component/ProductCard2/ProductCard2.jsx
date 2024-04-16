@@ -1,15 +1,21 @@
-import React, { useContext, useState, useEffect } from 'react'
-import prd1 from '../assests/prd1.png'
+import React, { useContext,useState } from 'react'
+import prd1 from '../../assests/prd1.png'
 import {FaStar} from 'react-icons/fa'
-import { ShopContext } from '../Context/ShopContext'
+import { FaHeart,FaRegHeart  } from "react-icons/fa";
 
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import { ShopContext } from '../../Context/ShopContext'
+
+import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { useQuery } from '@tanstack/react-query'
+import './ProductCard2.css'
 
 const ProductCard2 = ({prd, discount}) => {
-//reviewRecord
-  const {addToCart,getAvgScore,getReview} = useContext(ShopContext)
+
+  const {addToCart,getAvgScore,getReview,handleWishlist,wishItems} = useContext(ShopContext)
+
+  const [heart , setHeart] = useState(wishItems[prd.id]? true : false)
+
 
   const reviewQuery = useQuery({queryKey: ['review'],queryFn: getReview});
   const reviewRecord = reviewQuery.data
@@ -32,16 +38,22 @@ const ProductCard2 = ({prd, discount}) => {
         </div>
         )
     }
+
     if(!prd ) return (
       <div style={ {border: '1px solid rgba(211, 214, 217, 1)', borderRadius:'20px', padding:'10px'}}>
         <Skeleton containerClassName="flex-1" height={'20vh'}/> 
         <Skeleton containerClassName="flex-1" height={48+48+36+72-20}/> 
      </div>
     )
-  
+
       return (
         <div className='product_wrapper product_wrapper_search'>
+          <div className='product_header'>
+              <p>Extra 10% OFF</p>
+              <button onClick={()=>{handleWishlist(prd);setHeart(!heart)}}>{heart ? <FaHeart style={{color:'#F58220'}}  /> : <FaRegHeart style={{color:'rgb(169, 169, 169)'}} />}</button>
+          </div>
           <a href={`/product/${prd.brand}/${prd.name}`}>
+
             <img src={prd.image} alt="Product Img"  onError={(e)=>onError(e)} />
             <div className='prd_info'>
               

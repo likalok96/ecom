@@ -35,19 +35,20 @@
     margin: 0 0 30px 0;
 }
 
-.no_order_wrapper button{
+.no_order_wrapper a{
     font-family: 'Ubuntu';
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.5px;
     color: white;
-
     background: #F58220;
-    height: 50px;
     width: 250px;
     border: 1px solid #F58220;
-    border-radius: 30px;
-    padding: 0;
+    border-radius: 50px;
+    padding: 20px 0;
+
+    text-align: center;
+    text-decoration: none;
 
 }
 
@@ -95,18 +96,6 @@
     place-content: center;
 }
 
-.order_detail{
-    display: flex;
-    flex-direction: column;
-
-}
-.order_start{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
 
 .coupon {
     overflow: hidden;
@@ -119,9 +108,7 @@
     text-overflow: ellipsis;
 
 }
-.account_back{
-    display: none;
-}
+
 
 .account_nav_wrapper{
     width: max-content;
@@ -174,13 +161,17 @@
 
         
     }
+    .order_spacing{
+        place-content: start ;
+    }
     .order_title{
         padding: 20px 0px;
-
     }
     .order_title p{
-        
-        width: min-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align : center;
     }
 
     .order_main_wrapper{
@@ -190,4 +181,11 @@
 
 
     
+}
+
+@media screen and (max-width: 300px) {
+
+    .order_title{
+        display: none;
+    }
 }

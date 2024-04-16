@@ -98,3 +98,14 @@
     }
 
 }
+
+@media screen and (max-width: 400px) {
+    .review_swiper_top{
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .review_swiper_btn{
+        flex-direction: row;
+    }
+}

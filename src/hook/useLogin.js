@@ -1,7 +1,7 @@
-import {  useEffect, useState } from 'react'
+import {   useState } from 'react'
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useGoogleLogin,useGoogleOneTapLogin,GoogleLogin   } from '@react-oauth/google';
+import { useGoogleLogin   } from '@react-oauth/google';
 import jwt_decode from "jwt-decode";
 
 
@@ -9,12 +9,10 @@ const useLogin = () => {
     const location = useLocation();
 
   const [user, setUser] = useState({name: '', password: ''});
-//  const [google, setGoogle] = useState()
-const google_client_id = '1087005348930-mljeqbal7qquh9kssbof6hvmeb9nagnt.apps.googleusercontent.com'
+  const google_client_id = '1087005348930-mljeqbal7qquh9kssbof6hvmeb9nagnt.apps.googleusercontent.com'
 
   const navigate = useNavigate();
 
-//  axios.defaults.withCredentials = true;
 
   const login = (e)=> {
       e.preventDefault()
@@ -26,7 +24,6 @@ const google_client_id = '1087005348930-mljeqbal7qquh9kssbof6hvmeb9nagnt.apps.go
               localStorage.setItem("refresh-token-exp", jwt_decode(res.data.Token).exp)
               
               navigate("/account",{ state: {location} })
-              //navigate("/order",{ state: {location} })
 
           } else {
               alert(res.data.Message)
@@ -62,56 +59,7 @@ const google_client_id = '1087005348930-mljeqbal7qquh9kssbof6hvmeb9nagnt.apps.go
         console.log(err)
     }
   }
-/*
-  const google_login = useGoogleLogin({
-    onSuccess: codeResponse => 
-    {
-        console.log(codeResponse)
-        fetch(`https://www.googleapis.com/oauth2/v2/userinfo?access_token=${codeResponse.access_token}`,
-        {
-            method: 'GET',
-            withCredentials: true,
-            credentials: 'include',
-            Headers:{
-                'Authorization': `Bearer ${codeResponse.access_token}`,
-                'Content-Type': 'application/json'
-            }
-        }   
-        
-        )
-        .then((res)=>{
-            console.log(res.data)
-        })
-        .catch((err)=>{
-            console.log(err)
-        })
-    }
-    
 
-
-  });
-*/
-
-/*
-  const login_google = (google) =>{
-    axios.get(`https://www.googleapis.com/oauth2/v2/userinfo`,
-    {
-        headers: 
-        {
-            Authorization: `Bearer ${google.access_token}`,
-            'Access-Control-Allow-Credentials': 'true'
-        }
-    }
-    )
-    .then((res)=>{
-        console.log(res.data)
-    })
-    .catch((err)=>{
-        console.log(err)
-    })
-  }
-
-*/
   const google_login = useGoogleLogin({
     onSuccess:  tokenResponse => {
       console.log(tokenResponse);

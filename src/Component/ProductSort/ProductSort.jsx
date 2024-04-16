@@ -1,27 +1,18 @@
 import React from 'react'
-import useProductSort from '../hook/useProductSort'
-import { useSearchParams } from 'react-router-dom'
+import './ProductSort.css'
+
 
 const ProductSort = ({itemsPerPage, sort, setSort, setItemPerPage, setCurrentPage}) => {
-    //setItemOffset
-    //console.log('ProductSort')
-    //const {sort, setSort} = useProductSort()
-    //const [searchParams , setSearchParams] = useSearchParams()
 
     const handleSort = (e) => {
         setSort(e.target.value)
         setCurrentPage(0)
-        
-        //setItemOffset(0)
-        //setItemPerPage(0);
     }
 
     const handleItemPerPage = (e) => {
         setItemPerPage(e.target.value);
         setCurrentPage(0)
-        //setItemOffset(0)
     }
-
 
   return (
     <div className='product_page_top'>

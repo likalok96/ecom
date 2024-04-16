@@ -2,27 +2,23 @@ import React, { useContext, useEffect, useState } from 'react'
 import './AccountNav.css'
 import {AiOutlineMail} from 'react-icons/ai'
 import {GoSignOut} from 'react-icons/go'
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import useProfile from '../hook/useProfile';
 import { ShopContext } from '../Context/ShopContext';
 
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
 
 const AccountNav = ({profile}) => {
-  const {getQuantity,exp,setExp} = useContext(ShopContext);
+  const {setExp} = useContext(ShopContext);
 
-
-  //const {profile} = useProfile()
   const navigate = useNavigate()
 
   const [loading , setLoading] = useState(false)
   useEffect(()=>{
       setTimeout(() => {
           setLoading(true)
-      }, 1000);
+      }, 500);
 
   },[])
 
@@ -34,32 +30,6 @@ const AccountNav = ({profile}) => {
     setExp(false)
     navigate("/account/login");
   }
-
-  /*
-    const [profile, setProfile] = useState([]);
-
-
-    useEffect(()=>{
-      const token = {token: localStorage.getItem('access-token') || ''}
-        axios.post(process.env.REACT_APP_API_URL + "/account/profile",token)
-        .then((res)=>{
-          setProfile(res.data[0])
-        })
-    },[])
-
-    const logout = (e)=> {
-      e.preventDefault();
-      localStorage.setItem("access-token", '')
-      axios.get(process.env.REACT_APP_API_URL + "/account/logout")
-      .then((res)=>{
-        if (res.data.Status === "Success"){
-          navigate("/account/login")
-      } else {
-          alert("error")
-        }
-      }).catch((err)=> console.log(err))
-    }
-*/
 
   return (profile&&loading) ? (
   <div className='account_nav'>

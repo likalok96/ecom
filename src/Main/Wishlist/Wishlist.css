@@ -1,0 +1,22 @@
+.wishlist_wrapper{
+    margin: 0 auto;
+    max-width: 80vw;
+}
+.wishlist_wrapper h1{
+    font-size: 35px;
+    font-family: 'Ubuntu';
+    font-weight: 700;
+    color: #F58220;
+    
+}
+/*    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+*/
+.wishlist_grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+
+}
+
+.wishlist_card{
+    max-width: 300px;
+}

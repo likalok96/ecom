@@ -1,0 +1,108 @@
+
+.no_opt{
+    display: grid;
+    grid-template-columns: 0.9fr 0.1fr;
+
+}
+.no_opt p{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0 50px 0 0;
+
+}
+.no_opt a{
+    text-decoration: none;
+    color: #59595B;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.no_opt a:hover{
+    color: #59595B;
+    color: #f58220;
+    cursor: pointer;
+}
+
+
+.ps_btn_wrapper{
+    height: 34px;
+    height: max-content;
+    display: grid;
+    margin-top: 25px;
+
+    grid-template-columns: 9fr 1fr;
+    
+}
+
+.ps_btn_wrapper a{
+    text-decoration: none;
+    color: #59595B;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 50px;
+
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.ps_btn_wrapper a:hover{
+    color: #f58220;
+    cursor: pointer;
+
+}
+
+.ps_btn_option{
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+.ps_btn_option p{
+    margin: 0 20px 0 0;
+    padding: 5px 20px;
+
+    border: 1px solid transparent;
+    border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #59595B;
+
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+
+}
+
+
+
+.ps_btn_option p:hover{
+    color: #f58220;
+    background: #FDE9D7 ;
+    cursor: pointer;
+}
+
+.category_active{
+    color: #f58220;
+    background: #FDE9D7 ;
+}
+
+@media screen and (max-width: 916px) {
+
+    .ps_btn_wrapper a{
+        margin-right: 0px;
+    }
+    .ps_btn_option{
+        margin-left: 0px;
+    }
+    .ps_btn_option p{
+        margin: 0 0px 0 0;
+        padding: 5px 20px;
+    }
+
+}

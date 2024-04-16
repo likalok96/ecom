@@ -23,7 +23,7 @@ const useSignup = () => {
     const regex_address = new RegExp('^[A-Za-z1-9 ]+$')
     const regex_email = new RegExp('^[^ ]+[1-9a-zA-Z]+[@]{1}[1-9a-zA-Z]+[.]{1}[a-z]+$')
     const regex_phone = new RegExp('^[0-9]{10}$')
-    const regex_password = new RegExp('^[^ ]{6}$')
+    const regex_password = new RegExp('^[^ ]{6,}$')
 
     const checkForm = () => {
 
@@ -53,7 +53,7 @@ const useSignup = () => {
     const handleChange = (e)=> {
         
         setProfile({...profile,[e.target.name]: e.target.value})
-        console.log(e.target)
+        //console.log(e.target)
     }
 
     const singupClick = (e) => {

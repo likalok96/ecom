@@ -1,4 +1,5 @@
 import React from 'react'
+import './SearchNav.css'
 
 const SearchNav = ({setShow}) => {
     const List_cate = ({url,text}) => {
@@ -20,8 +21,8 @@ const SearchNav = ({setShow}) => {
             <List_cate url='' text='Second Group'/>
             <List_cate url='' text='Third Group'/>
             <List_cate url='/brand' text='Shop by Brand'/>
-            <List_cate url='' text='On Sale'/>
-            <List_cate url='' text='Our Principle'/>
+            {/*<List_cate url='' text='On Sale'/>
+            <List_cate url='' text='Our Principle'/>*/}
         </ul>
     </nav>
   )

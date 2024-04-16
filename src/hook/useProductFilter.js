@@ -1,4 +1,3 @@
-import React from 'react'
 import { useContext } from 'react'
 import { useParams,useSearchParams  } from 'react-router-dom'
 import { ShopContext } from '../Context/ShopContext'
@@ -11,7 +10,6 @@ const useProductFilter = () => {
     const productQuery = useQuery({queryKey: ['productList'],queryFn: getProduct});
     const productList =   productQuery.data
 
-    //const productList = [1,2,3]
     productList?.map((prd)=>{
         prd.search_text = prd.brand + prd.name
         prd.search = prd.category + prd.brand
@@ -87,7 +85,6 @@ const useProductFilter = () => {
             setSearchParams(searchParams)
 
         }
-//        setItemOffset(0)
     }
 
 

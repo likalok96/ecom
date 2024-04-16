@@ -1,27 +1,16 @@
-import React, {  useEffect, useState } from 'react'
-import { useSearchParams } from 'react-router-dom';
+import React, {  useState } from 'react'
+import './FilterNav.css'
 
 const FilterNav = ({list,feild,handleClick,query, setCurrentPage}) => {
-    const [searchParams, setSearchParams] = useSearchParams();
-    //let query = searchParams
     const [hide, setHide] = useState(!query?.get(feild) ? true : false)
-
 
     const handleClickReset = (e,feild) =>{
         
         handleClick(e,feild)
         setCurrentPage(0)
         
-        //query.set('page',0)
-        //setSearchParams(query)
-        
-        
     }
 
-    
-    
-
-    console.log(query?.get(feild))
     const handleHide = () => {
         setHide(!hide)
     }

@@ -1,11 +1,11 @@
-import React, {  useState } from 'react'
+import  {  useState } from 'react'
 import { useContext } from 'react';
 import { ShopContext } from '../Context/ShopContext';
 import { useQuery } from '@tanstack/react-query';
 
 const useSearch = () => {
 
-    const {getQuantity,auth,getProduct} = useContext(ShopContext);
+    const {getProduct, showSearch, setShowSearch, search, setSearch} = useContext(ShopContext);
 
     const productQuery = useQuery({queryKey: ['productList'],queryFn: getProduct});
     const productList = productQuery.data
@@ -15,9 +15,9 @@ const useSearch = () => {
         prd.price_cal = prd.price.replace('.00','')
     })
 
-    const [showSearch, setShowSearch] =  useState(false);
+//    const [showSearch, setShowSearch] =  useState(false);
 
-    const [search, setSearch] = useState('')
+//    const [search, setSearch] = useState('')
 
 
     let search_record = JSON.parse(localStorage.getItem('search_record'));

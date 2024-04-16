@@ -93,14 +93,14 @@ const Signup = () => {
     <div className='profile_main_wrapper'>
         <h1>Create Account</h1>
         <form className='profile_form'>
-            <FormInput title='First Name' type='text' name='first_name' value={profile.first_name}  pattern='^[^ ]+$' err='Must not be blank.' onChange={handleChange} />
-            <FormInput title='Last Name' type='text' name='last_name' value={profile.last_name}  pattern='^[^ ]+$' err='Must not be blank.' onChange={handleChange} />
-            <FormInput title='Address' type='text' name='address' value={profile.address}  pattern='^[A-Za-z1-9 ]+$' err='Must not be blank or Contain special charater.' onChange={handleChange} />
+            <FormInput title='First Name' type='text' autoComplete='given-name' name='first_name' value={profile.first_name}  pattern='^[^ ]+$' err='Must not be blank.' onChange={handleChange} />
+            <FormInput title='Last Name' type='text' autoComplete='family-name' name='last_name' value={profile.last_name}  pattern='^[^ ]+$' err='Must not be blank.' onChange={handleChange} />
+            <FormInput title='Address' type='text' autoComplete='street-address' name='address' value={profile.address}  pattern='^[A-Za-z1-9 ]+$' err='Must not be blank or Contain special charater.' onChange={handleChange} />
 
-            <FormInput title='Email' type='email' name='email' value={profile.email} pattern='^[^ ]+[1-9a-zA-Z]+[@]{1}[1-9a-zA-Z]+[.]{1}[a-z]+$' err='Please provide a valid email address.' onChange={handleChange} />
-            <FormInput title='Mobile Number' type='tel' name='phone_number' value={profile.phone_number}  pattern='^[0-9]{10}$' err='Please provide a valid phone number with 10 numbers.' onChange={handleChange} />
-            <FormInput title='Password' type='password' name='password' value={profile.password}  pattern='^[^ ]{6}$' err='Password should have more than 6 charaters.' onChange={handleChange} />
-            <FormInput title='Confirm Password' type='password' name='confirm_password' value={profile.confirm_password}  pattern={profile.password} err='Confirm password is not the same as password.' onChange={handleChange} />
+            <FormInput title='Email' type='email' autoComplete='email' name='email' value={profile.email} pattern='^[^ ]+[1-9a-zA-Z]+[@]{1}[1-9a-zA-Z]+[.]{1}[a-z]+$' err='Please provide a valid email address.' onChange={handleChange} />
+            <FormInput title='Mobile Number' autoComplete='tel' type='tel' name='phone_number' value={profile.phone_number}  pattern='^[0-9]{10}$' err='Please provide a valid phone number with 10 numbers.' onChange={handleChange} />
+            <FormInput title='Password' autoComplete='new-password' type='password' name='password' value={profile.password}  pattern='^[^ ]{6,}$' err='Password should have more than 6 charaters.' onChange={handleChange} />
+            <FormInput title='Confirm Password' autoComplete='new-password' type='password' name='confirm_password' value={profile.confirm_password}  pattern={profile.password} err='Confirm password is not the same as password.' onChange={handleChange} />
 
 
 
