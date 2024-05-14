@@ -20,3 +20,10 @@
 .wishlist_card{
     max-width: 300px;
 }
+
+@media screen and (max-width: 300px) {
+    .wishlist_grid{
+        grid-template-columns: repeat(auto-fill, minmax(100%,1fr));
+    
+    }
+}

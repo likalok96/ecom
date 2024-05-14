@@ -5,7 +5,9 @@ import { useQuery } from '@tanstack/react-query';
 
 const useSearch = () => {
 
-    const {getProduct, showSearch, setShowSearch, search, setSearch} = useContext(ShopContext);
+    const {getProduct, showSearch, setShowSearch} = useContext(ShopContext);
+
+    const [search, setSearch] = useState('')
 
     const productQuery = useQuery({queryKey: ['productList'],queryFn: getProduct});
     const productList = productQuery.data
@@ -22,8 +24,8 @@ const useSearch = () => {
 
     let search_record = JSON.parse(localStorage.getItem('search_record'));
 
-    let searchList = search.length>0 ? productList?.filter((prd)=>
-    prd.search.toLowerCase().indexOf(search.toLowerCase())!==-1
+    let searchList = search?.length>0 ? productList?.filter((prd)=>
+    prd.search?.toLowerCase().indexOf(search.toLowerCase())!==-1
     ) : []
 
     const unique_key = (key) => {
@@ -36,7 +38,7 @@ const useSearch = () => {
     let filter_cate = unique_key('category')
 
     filter_cate = filter_cate.filter((cate)=>
-    cate.toLowerCase().indexOf(search.toLowerCase())!==-1
+    cate.toLowerCase().indexOf(search?.toLowerCase())!==-1
     )
 
     const handleSearch = ()=> {
@@ -49,6 +51,7 @@ const useSearch = () => {
     }
 
     return {showSearch, setShowSearch, search, setSearch, search_record, filter_cate, searchList, handleSearch}
+    //, search, setSearch
 }
 
 export default useSearch

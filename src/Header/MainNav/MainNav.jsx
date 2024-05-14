@@ -8,6 +8,7 @@ import useSearch from '../../hook/useSearch'
 import SearchBar from '../../Component/SearchBar/SearchBar'
 import SearchNav from '../../Component/SearchNav/SearchNav'
 import NavProfile from '../../Component/NavProfile/NavProfile'
+import SearchResult from '../../Component/SearchResult/SearchResult'
 
 const MainNav = ({setShow,showMenu, setShowMenu,showSearch, setShowSearch}) => {
 
@@ -38,10 +39,10 @@ const MainNav = ({setShow,showMenu, setShowMenu,showSearch, setShowSearch}) => {
         <div className='search_wrapper'>
         {<SearchBar search={search} setSearch={setSearch} showSearch={showSearch} setShowSearch={setShowSearch} search_record={search_record}
              searchList={searchList} filter_cate={filter_cate} handleSearch = {handleSearch} />}
-            
+                        <SearchResult setShowSearch={setShowSearch} showSearch={showSearch} search={search} search_record={search_record} setSearch={setSearch} filter_cate={filter_cate} searchList={searchList}/>
+
             {<SearchNav setShow={setShow} />}
-        
-           
+
         </div>
 
         <NavProfile quantity={quantity} exp={exp}/>

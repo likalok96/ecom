@@ -45,11 +45,11 @@ const CheckoutBox = ({item, total, checkout}) => {
         <p onClick={()=>checkout(item)}>CHECK OUT | HK${total}.00</p> 
 
         <div className='checkout_bottom'>
-                <a href="">Shipping</a><h4> fee will be calculated at checkout</h4>
+                <h4> <a href="">Shipping</a> fee will be calculated at checkout</h4>
         </div>
 
         <div className='checkout_bottom'>
-                <h4>Pickup service </h4><a href="">Terms & Conditions</a>
+                <h4>Pickup service <a href="">Terms & Conditions</a></h4>
         </div>
     
     </div>

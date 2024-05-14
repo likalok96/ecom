@@ -8,6 +8,8 @@ import Review from '../../Review/Review'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { useQuery } from '@tanstack/react-query'
+import prd_img from '../../mysql_data/productLinks.json'
+
 
 const ProductDetails = () => {
 
@@ -27,6 +29,8 @@ const ProductDetails = () => {
 
     let {brand, product} = useParams()
 
+    let str = brand + ' ' + product
+
     productList?.map((prd)=>{
 
         prd.search = prd.category + prd.brand
@@ -37,13 +41,13 @@ const ProductDetails = () => {
     useEffect(()=>{
 
         if(productList){
-        setFilteredProduct(productList.filter((prd)=>prd.search_name.toLowerCase().replace('-',' ').indexOf((brand+" "+product).toLowerCase().replace('-',' '))!==-1))
-        setFilteredList(productList.filter((prd)=>prd.name.toLowerCase().replace('-',' ').indexOf(product.toLowerCase().replace('-',' '))!==-1))
+        setFilteredProduct(productList.filter((prd)=>prd.search_name.toLowerCase().indexOf((brand+" "+product).toLowerCase())!==-1))
+        setFilteredList(productList.filter((prd)=>prd.name.toLowerCase().indexOf(product.toLowerCase())!==-1))
         console.log(filteredList)
         }
     },[productList])
 
-    console.log(product.toLowerCase().replace('-',' '))
+    console.log(product.toLowerCase())
     console.log(filteredList)
 
     const StarRate = (rating)=> {
@@ -61,16 +65,16 @@ const ProductDetails = () => {
     e.target.src = prd1;
     
     }
-
+//(filteredProduct.length!==0 ) ? filteredProduct[0].image : prd1 
   return (
     <div>
     <div className='product_main_wrapper'>
         <div className='product_image_wrapper'>
             <div className='product_image_nav'>
-                <img loading='lazy' src={(filteredProduct.length!==0 ) ? filteredProduct[0].image : prd1 } alt="Product Img" onError={(e)=>onError(e)}/>
+                <img loading='lazy' src={prd_img[str]} alt="Product Img" onError={(e)=>onError(e)}/>
             </div>
             <div className='product_image'>
-                <img loading='lazy' src={(filteredProduct.length!==0 ) ? filteredProduct[0].image : prd1} alt="Product Img"onError={(e)=>onError(e)} />
+                <img loading='lazy' src={prd_img[str]} alt="Product Img"onError={(e)=>onError(e)} />
             </div>
         </div>
 
@@ -94,13 +98,13 @@ const ProductDetails = () => {
                 <p>Brand</p>
                 <div className='product_describe_brand'>
                     {(filteredProduct.length!==0 ) ? filteredList.map((item)=>
-                        <a key={item.brand} className={item.brand.toLowerCase()===brand.toLowerCase().replace('-',' ') ? 'brand_active':''} 
-                        href={`/product/${item.brand.toLowerCase().replace(' ','-')}/${product}`}
+                        <a key={item.brand} className={item.brand.toLowerCase()===brand.toLowerCase() ? 'brand_active':''} 
+                        href={`/product/${item.brand}/${product}`}
                         >{item.brand}</a>
                     )
                     :
-                    <a key={brand} className={brand.toLowerCase()===brand.toLowerCase().replace('-',' ') ? 'brand_active':''} 
-                    href={`/product/${brand.toLowerCase().replace(' ','-')}/${product}`}
+                    <a key={brand} className={brand.toLowerCase()===brand.toLowerCase() ? 'brand_active':''} 
+                    href={`/product/${brand}/${product}`}
                     >{brand}</a>}
                 </div>
             </div>

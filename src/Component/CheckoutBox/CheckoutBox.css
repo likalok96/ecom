@@ -55,6 +55,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .checkout p:hover{
@@ -105,6 +106,8 @@
 
 @media screen and (max-width: 670px) {
     .checkout{
+        width: 100%;
+        max-width: 300px;
         padding: 0;
     }
 

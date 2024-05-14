@@ -54,7 +54,7 @@ const ProductCard2 = ({prd, discount}) => {
           </div>
           <a href={`/product/${prd.brand}/${prd.name}`}>
 
-            <img src={prd.image} alt="Product Img"  onError={(e)=>onError(e)} />
+            <img loading='lazy' src={prd.image} alt="Product Img"  onError={(e)=>onError(e)} />
             <div className='prd_info'>
               
               <p className='brand'>{prd.brand}</p>

@@ -18,7 +18,7 @@ function App() {
             <li key='Health'><ProductSwiper opt={true} category={'Health'}  title='Health' /></li>
             <li key='Electronics'><ProductSwiper opt={true} category={'Electronics'}  title='Electronics' /></li>
 
-            <ReviewSwiper/>
+            {<ReviewSwiper/>}
             
       </div>
 

@@ -95,7 +95,7 @@ li{
 
     .search_wrapper{
         grid-area: search;
-        width: 100%;
+        width: 90%;
     }
 
 
@@ -108,8 +108,11 @@ li{
     }
 }
 
-
-@media screen and (max-width: 300px) {
+/*400*/
+@media screen and (max-width: 350px) {
+    .mainNav_wrapper{
+        grid-template-columns: auto auto auto;
+    }
 
     .search_wrapper{
         grid-area: search;
@@ -124,6 +127,7 @@ li{
     }
 
     .home_img img {
+        display: none;
         width: 50px;
 
     }

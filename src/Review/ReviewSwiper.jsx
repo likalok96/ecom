@@ -24,7 +24,7 @@ const ReviewSwiper = () => {
     const reviewQuery = useQuery({queryKey: ['review'],queryFn: getReview});
 
     const reviewRecord = reviewQuery.data
-
+  console.log(reviewQuery)
     const reviewRecord_filter = reviewRecord && reviewRecord.filter((record)=>record.product_id===0)
 
     const prevRef = useRef(null);

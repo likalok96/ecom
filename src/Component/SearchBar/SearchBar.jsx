@@ -6,18 +6,18 @@ const SearchBar = ({search, setSearch,showSearch, setShowSearch, search_record, 
 
     const inputRef = useRef(null);
 //window.setTimeout(()=>setShowSearch(false),100)
-    useEffect(()=>{
+/*     useEffect(()=>{
         if (document.activeElement !== inputRef.current) {
             // do something
             setShowSearch(false)
         }
-    },[document.activeElement])
+    },[document.activeElement]) */
 
-
+//onBlur={()=>{setShowSearch(false)}}
   return (
     <div className='search_bar'>
         <input ref={inputRef} type="text" placeholder='Search...' value={search} onChange={(e)=>setSearch(e.target.value)} onFocus={(e)=>{setShowSearch(true)}} 
-        onBlur={()=>{setShowSearch(false)}} />
+         />
         
         <a className='search_icon' href={`/collection?search=${search}`}><AiOutlineSearch  onClick={()=>handleSearch()}/></a>
         {/*showSearch &&

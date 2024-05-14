@@ -120,6 +120,7 @@
         width: 100%;
     }
     .cart_main_wrapper{
+        min-height: 0;
         width: 100%;
     }
     .cart_header{

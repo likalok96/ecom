@@ -99,8 +99,8 @@ console.log('route')
             
         </div>*/}
         <StickyNav setShow={setShow} show={show} showMenu={showMenu} setShowMenu={setShowMenu} setShowSearch={setShowSearch} showSearch={showSearch}/>
-        <SearchResult setShowSearch={setShowSearch} showSearch={showSearch}/>
-        {showMenu ? 
+{/*         <SearchResult setShowSearch={setShowSearch} showSearch={showSearch}/>
+ */}        {showMenu ? 
         <div className='sticky_dropdown'>
           <MainMune setShow={setShow} show={show}/>
         </div>
@@ -109,7 +109,7 @@ console.log('route')
           <li key='First Group'><Dropdown  text='First Group' show={show} setShow={setShow}/></li>
           <li key='Second Group'><Dropdown text='Second Group' show={show} setShow={setShow}/></li>
           <li key='Third Group'><Dropdown text='Third Group' show={show} setShow={setShow}/></li>
-          <li key='Shop by Brand'><Dropdown text='Shop by Brand' show={show} setShow={setShow}/></li>
+          {<li key='Shop by Brand'><Dropdown text='Shop by Brand' show={show} setShow={setShow}/></li>}
           
       </div>}
             {(showContent) && <Routes>

@@ -119,9 +119,13 @@
 @media screen and (max-width: 1100px) {
 
     .cart_info{
-
         border-top: 1px  solid transparent;
-        border-bottom: 1px  solid #E7E7E7;
+
+    }
+
+    .cart_info ~.cart_info {
+
+        border-top: 1px  solid #E7E7E7;
 
     
     }

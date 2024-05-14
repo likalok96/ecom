@@ -17,7 +17,7 @@ const Success = () => {
         <h1>Order Success</h1>
         <div className='success_order_wrapper'>
             <div className='order_wrapper'>
-                <div className='order_title order_spacing'>
+                <div className='order_title '>
                     <p>Order ID</p>
                     <p>Shipping Details</p>
                     <p>Order Time</p>
@@ -36,7 +36,7 @@ const Success = () => {
                 </div>
 
                     {cartItems.map((s)=>
-                    <div className='cart_info cart_grid'>
+                    <div className='cart_info cart_grid_card'>
                         <div className='cart_info_product'>
                             <img src={s.image} alt="img" />
                             

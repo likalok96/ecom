@@ -40,7 +40,6 @@
 }
 
 .discount_email input{
-    width: 250px;
     padding: 18px 55px 20px 18px;
     
     border: none;
@@ -81,17 +80,19 @@
 
 @media screen and (max-width: 670px) {
 
-    .discount_email input{
-        width: 150px;
 
+
+    .discount_main_wrapper{
+        flex-direction: column;
     }
+    
 
 }
 
 @media screen and (max-width: 300px) {
 
     .discount_email input{
-        width: 100px;
+        width: calc(90vw - 80px);
 
     }
 
