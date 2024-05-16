@@ -1,6 +1,6 @@
 import React from 'react'
 import prd1 from '../../assests/prd1.png'
-import prd_img from '../../mysql_data/productLinks.json'
+import prd_img from '../../utils/data/productLinks.json'
 import './ProductCard.css'
 
 

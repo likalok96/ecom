@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import useRefresh from '../RefreshToken/useRefresh';
+import useRefresh from './useRefresh';
 
 const useOrderDetail = () => {
     const [orderItem, SetOrderItem] = useState([]);
@@ -18,6 +18,7 @@ const useOrderDetail = () => {
             })
         }
         getOrderItem()
+        // eslint-disable-next-line
     },[])
 
     return {orderItem}

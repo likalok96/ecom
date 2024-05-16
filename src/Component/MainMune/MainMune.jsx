@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { ShopContext } from '../../Context/ShopContext'
-import categoryList from '../../mysql_data/categoryLinks.json'
+import categoryList from '../../utils/data/categoryLinks.json'
 import {AiOutlineArrowLeft,AiOutlineArrowRight} from 'react-icons/ai'
 import { useQuery } from '@tanstack/react-query'
 import './MainMune.css'

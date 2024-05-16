@@ -1,7 +1,8 @@
 import React, { createContext,useEffect,useState } from 'react'
 import axios from 'axios';
-import prd_img from '../mysql_data/productLinks.json'
+import prd_img from '../utils/data/productLinks.json'
 import Cookies from 'js-cookie';
+import createProduct from '../utils/ProductFn/createProduct';
 
 
 export const ShopContext = createContext(null);
@@ -21,7 +22,7 @@ const ShopContextProvider  = (props) => {
 
     const [showMenu , setShowMenu] = useState(false);
 
-    const [productList , setProductList ] = useState([]);
+//    const [productList , setProductList ] = useState([]);
 
     const [auth, setAuth] = useState(false);
 
@@ -53,11 +54,13 @@ const ShopContextProvider  = (props) => {
       return axios.get(process.env.REACT_APP_API_URL + "/api/get/",{headers:{'Pragma': 'no-cache','Cache-control':'no-cache'}})
       .then((response)=>{
          const result = response.data.map((item)=>{
-          const str = item.brand + ' ' + item.name
+           const str = item.brand + ' ' + item.name
           item.image = prd_img[str]
           item.price_cal = item.price
+         // createProduct(item)
+          
         })
-
+        //console.log(result)
         return response.data
       })
 
@@ -112,7 +115,7 @@ const ShopContextProvider  = (props) => {
     }
 
     const addAllToCart = (itemList) => {
-      itemList.map((item)=>{
+      itemList.forEach((item)=>{
         setCartItems((prev) => [...prev,item])
       })
 
@@ -169,7 +172,7 @@ const ShopContextProvider  = (props) => {
 
   const getAvgScore = (reviewRecord) => {
     let total = 0;
-    reviewRecord&&reviewRecord.map((record)=>{total+=record.score})
+    reviewRecord&&reviewRecord.forEach((record)=>{total+=record.score})
     return total/reviewRecord?.length
   }
 
@@ -186,7 +189,8 @@ const ShopContextProvider  = (props) => {
       getQuantity,
       showMenu,
       setShowMenu,
-      productList, getProduct,
+//      productList,
+      getProduct,
       auth,
       setAuth,
       addAllToCart,

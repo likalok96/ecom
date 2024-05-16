@@ -1,6 +1,6 @@
 import {  useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import useRefresh from '../RefreshToken/useRefresh';
+import useRefresh from './useRefresh';
 
 const useProfile = () => {
 
@@ -30,10 +30,9 @@ const useProfile = () => {
 
     useEffect(()=>{
 
-
         getProfile()
         
-
+// eslint-disable-next-line
     },[])
 
 

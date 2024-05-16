@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import './Dropdown.css'
 import { ShopContext } from '../../Context/ShopContext'
-import categoryList from '../../mysql_data/categoryLinks.json'
-import brandList from '../../mysql_data/brandlinks.json'
+import categoryList from '../../utils/data/categoryLinks.json'
+import brandList from '../../utils/data/brandlinks.json'
 import { useQuery } from '@tanstack/react-query'
 
 const Dropdown = ({text,show,setShow}) => {

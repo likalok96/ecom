@@ -10,11 +10,11 @@ const useProductFilter = () => {
     const productQuery = useQuery({queryKey: ['productList'],queryFn: getProduct});
     const productList =   productQuery.data
 
-    productList?.map((prd)=>{
+/*     productList?.map((prd)=>{
         prd.search_text = prd.brand + prd.name
         prd.search = prd.category + prd.brand
         prd.price_cal = prd.price.replace('.00','')
-    })
+    }) */
 
     const {category,brand} = useParams();
 
@@ -44,7 +44,7 @@ const useProductFilter = () => {
     
         let isCate = searchParams.get(key) ? false : true
 
-        searchParams.get(key) && searchParams.get(key).split(',').map((cate)=>{
+        searchParams.get(key) && searchParams.get(key).split(',').forEach((cate)=>{
             
             if(prd[key].toLowerCase().indexOf(cate.toLowerCase())!==-1){
                 isCate= true

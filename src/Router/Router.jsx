@@ -1,34 +1,29 @@
-import React,{useEffect, useState} from 'react'
+import React,{ useState } from 'react'
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import App from '../App';
-import Cart from '../Main/Cart/Cart';
+import App from '../Page/App/App';
+import Cart from '../Page/Cart/Cart';
 import ShopContextProvider from '../Context/ShopContext'
-import TopNav from '../Header/TopNav/TopNav';
-import MainNav from '../Header/MainNav/MainNav';
-import Dropdown from '../Header/Dropdown/Dropdown';
+
 import MenuCart from '../Header/MenuCart/MenuCart';
-import Account from '../Account/Account';
-import Login from '../Account/Login/Login';
-import Order from '../Account/Order/Order';
-import OrderDetail from '../Account/Order/OrderDetail';
-import Profile from '../Account/Profile/Profile';
-import Checkout from '../Checkout/Checkout';
-import Success from '../Checkout/Success';
-import Password from '../Account/Password/Password';
-import Signup from '../Account/Signup/Signup';
-import Product from '../Main/Product/Product';
-import ProductDetails from '../Main/Product/ProductDetails';
-import Discount from '../Footer/Discount';
-import Contact from '../Footer/Contact';
-import MainMune from '../Component/MainMune/MainMune';
-import Brand from '../Main/Brand/Brand';
-import Review from '../Review/Review';
+import Account from '../Page/Account/Account';
+import Login from '../Page/Account/Login/Login';
+import Order from '../Page/Account/Order/Order';
+import OrderDetail from '../Page/Account/Order/OrderDetail';
+import Profile from '../Page/Account/Profile/Profile';
+import Checkout from '../Page/Checkout/Checkout';
+import Success from '../Page/Success/Success';
+import Password from '../Page/Account/Password/Password';
+import Product from '../Page/Product/Product';
+import ProductDetails from '../Page/ProductDetails/ProductDetails';
+
+import Brand from '../Page/Brand/Brand';
+import Review from '../Page/Review/Review';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import SearchNav from '../Component/SearchNav/SearchNav';
-import StickyNav from '../Header/StickyNav/StickyNav';
-import SearchResult from '../Component/SearchResult/SearchResult';
-import About from '../Footer/About/About';
-import Wishlist from '../Main/Wishlist/Wishlist';
+
+import About from '../Page/About/About';
+import Wishlist from '../Page/Wishlist/Wishlist';
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
 
 
 const google_client_id = '1087005348930-mljeqbal7qquh9kssbof6hvmeb9nagnt.apps.googleusercontent.com'
@@ -41,45 +36,7 @@ const Router = () => {
     const [showMenu, setShowMenu] = useState(false)
     const [showSearch, setShowSearch] = useState(false)
 
-    const showContent = (!showMenu && !showSearch || ( ( window.innerWidth > 800 ) && ( window.innerHeight > 600 )))
-/*
-    const meadiaQuery = window.matchMedia("(max-width: 1000px)");
-    const [showNav, setShowNav] = useState(true)
-    const [lastScrollY, setLastScrollY] = useState(window.scrollY);
-    const [windowSize, setWindowSize] = useState(meadiaQuery.matches);
-
-    const navCheck = ()=>{
-        if (window.scrollY > lastScrollY && windowSize && window.scrollY>200) { 
-          setShowNav(false); 
-  
-        } else { 
-  
-          setShowNav(true);  
-        }
-    
-        setLastScrollY(window.scrollY); 
-      }
-
-    useEffect(()=>{
-        window.matchMedia("(max-width: 1000px)").addEventListener('change', (e)=>setWindowSize(e.matches));
-        return ()=>{
-            window.matchMedia("(max-width: 1000px)").removeEventListener('change', (e)=>setWindowSize(e.matches));
-        }
-    },[])
-
-    useEffect(()=>{
-
-      
-      window.addEventListener('scroll', navCheck);
-      
-
-      return () =>{
-        //window.matchMedia("(max-width: 1000px)").removeEventListener('change', (e)=>setWindowSize(e.matches));
-        window.removeEventListener('scroll', navCheck);
-      }
-
-    },[lastScrollY])
-*/
+    const showContent = ((!showMenu) && (!showSearch || ( ( window.innerWidth > 800 ) && ( window.innerHeight > 600 ))))
 
 console.log('route')
   return (
@@ -88,51 +45,32 @@ console.log('route')
     <GoogleOAuthProvider clientId={google_client_id}>
     <ShopContextProvider >
         <BrowserRouter>
-        {/*<div className={showNav ? 'sticky_nav' : 'sticky_nav sticky_nav_hide'}>
-            <TopNav />
-            <MainNav setShow={setShow} show={show} showMenu={showMenu} setShowMenu={setShowMenu} showNav={showNav}/>
-            {/*<div className='mainNav_wrapper'>
-            
-              <SearchNav setShow={setShow}/>
-            
-            </div>
-            
-        </div>*/}
-        <StickyNav setShow={setShow} show={show} showMenu={showMenu} setShowMenu={setShowMenu} setShowSearch={setShowSearch} showSearch={showSearch}/>
-{/*         <SearchResult setShowSearch={setShowSearch} showSearch={showSearch}/>
- */}        {showMenu ? 
-        <div className='sticky_dropdown'>
-          <MainMune setShow={setShow} show={show}/>
-        </div>
-        :
-        <div className='sticky_dropdown'>
-          <li key='First Group'><Dropdown  text='First Group' show={show} setShow={setShow}/></li>
-          <li key='Second Group'><Dropdown text='Second Group' show={show} setShow={setShow}/></li>
-          <li key='Third Group'><Dropdown text='Third Group' show={show} setShow={setShow}/></li>
-          {<li key='Shop by Brand'><Dropdown text='Shop by Brand' show={show} setShow={setShow}/></li>}
-          
-      </div>}
+
+          <Header setShow={setShow} show={show} setShowSearch={setShowSearch} showSearch={showSearch} showMenu={showMenu} setShowMenu={setShowMenu} />
+
             {(showContent) && <Routes>
                     <Route path='/' element={<App />} />
                     <Route path='/cart' element={<Cart />} />
                     <Route path='/wishlist' element={<Wishlist />} />
                     <Route path='/cartmenu' element={<MenuCart />} />
-                    <Route path='/account/signup' element={<Signup />} />
-                    <Route path='/account/login' element={<Login />} />
-                    <Route path='/account' element={<Account />} />
-                    <Route path='/account/order' element={<Order />} />
-                    <Route path='/account/order/:order_id' element={<OrderDetail />} />
-                    <Route path='/account/profile' element={<Profile />} />
-                    <Route path='/account/password' element={<Password />} />
+
+                    <Route path='/account'>
+                      <Route path='login' element={<Login />} />
+                      <Route path='' element={<Account />} />
+                      <Route path='order' element={<Order />} />
+                      <Route path='order/:order_id' element={<OrderDetail />} />
+                      <Route path='profile' element={<Profile />} />
+                      <Route path='password' element={<Password />} />
+                    </Route>
+
                     <Route path='/checkout' element={<Checkout />} />
                     <Route path='/success/:session_id' element={<Success />} />
+                    
                     <Route path='/collection' element={<Product />} />
                     <Route path='/collection/:category' element={<Product />} />
                     <Route path='/collection/:category/:brand' element={<Product />} />
                     <Route path='/collection/brand/:brand' element={<Product />} />
                     <Route path='/brand' element={<Brand />} />
-
-              
 
                     <Route path='/product/:brand/:product' element={<ProductDetails />} />
 
@@ -142,9 +80,7 @@ console.log('route')
 
             </Routes>}
 
-            
-            {showContent && <Discount />}
-            {showContent && <Contact />}
+            {showContent && <Footer/>}
 
         </BrowserRouter >
     </ShopContextProvider>

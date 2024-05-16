@@ -12,10 +12,10 @@ const useSearch = () => {
     const productQuery = useQuery({queryKey: ['productList'],queryFn: getProduct});
     const productList = productQuery.data
 
-    productList?.map((prd)=>{
+/*     productList?.map((prd)=>{
         prd.search = prd.brand + prd.name
         prd.price_cal = prd.price.replace('.00','')
-    })
+    }) */
 
 //    const [showSearch, setShowSearch] =  useState(false);
 

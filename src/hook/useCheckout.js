@@ -1,6 +1,6 @@
 
 import { useNavigate } from 'react-router-dom'
-import useRefresh from '../RefreshToken/useRefresh'
+import useRefresh from './useRefresh'
 
 const useCheckout = () => {
 
@@ -16,7 +16,7 @@ const useCheckout = () => {
 
     const checkout = (item)=> {
         const token = {token: localStorage.getItem('access-token') || ''}
-        item = {...item,['token']: localStorage.getItem('access-token') || ''}
+        item = {...item,'token': localStorage.getItem('access-token') || ''}
         console.log(item)
 
         if (!localStorage.getItem('access-token')||token.token==='') {navigate("/account/login")}

@@ -16,7 +16,6 @@ const ProductCard2 = ({prd, discount}) => {
 
   const [heart , setHeart] = useState(wishItems[prd.id]? true : false)
 
-
   const reviewQuery = useQuery({queryKey: ['review'],queryFn: getReview});
   const reviewRecord = reviewQuery.data
 
