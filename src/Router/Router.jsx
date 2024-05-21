@@ -24,6 +24,7 @@ import About from '../Page/About/About';
 import Wishlist from '../Page/Wishlist/Wishlist';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
+import AuthContextProvider from '../Context/AuthContext';
 
 
 const google_client_id = '1087005348930-mljeqbal7qquh9kssbof6hvmeb9nagnt.apps.googleusercontent.com'
@@ -32,28 +33,29 @@ const google_client_id = '1087005348930-mljeqbal7qquh9kssbof6hvmeb9nagnt.apps.go
 const Router = () => {
 
 
-    const [show, setShow] = useState('');
+/*     const [show, setShow] = useState('');
     const [showMenu, setShowMenu] = useState(false)
     const [showSearch, setShowSearch] = useState(false)
 
-    const showContent = ((!showMenu) && (!showSearch || ( ( window.innerWidth > 800 ) && ( window.innerHeight > 600 ))))
-
+    const showContent = ((!showMenu) && (!showSearch || ( ( window.innerWidth > 800 ) && ( window.innerHeight > 600 )))) */
+//setShow={setShow} show={show} setShowSearch={setShowSearch} showSearch={showSearch} showMenu={showMenu} setShowMenu={setShowMenu} 
 console.log('route')
   return (
     
       
     <GoogleOAuthProvider clientId={google_client_id}>
     <ShopContextProvider >
+
         <BrowserRouter>
+        <AuthContextProvider>
+          <Header />
 
-          <Header setShow={setShow} show={show} setShowSearch={setShowSearch} showSearch={showSearch} showMenu={showMenu} setShowMenu={setShowMenu} />
-
-            {(showContent) && <Routes>
+            { <Routes>
                     <Route path='/' element={<App />} />
                     <Route path='/cart' element={<Cart />} />
                     <Route path='/wishlist' element={<Wishlist />} />
                     <Route path='/cartmenu' element={<MenuCart />} />
-
+                  
                     <Route path='/account'>
                       <Route path='login' element={<Login />} />
                       <Route path='' element={<Account />} />
@@ -62,6 +64,7 @@ console.log('route')
                       <Route path='profile' element={<Profile />} />
                       <Route path='password' element={<Password />} />
                     </Route>
+                  
 
                     <Route path='/checkout' element={<Checkout />} />
                     <Route path='/success/:session_id' element={<Success />} />
@@ -80,10 +83,12 @@ console.log('route')
 
             </Routes>}
 
-            {showContent && <Footer/>}
-
+            {<Footer/>}
+            </AuthContextProvider>
         </BrowserRouter >
+        
     </ShopContextProvider>
+    
     </GoogleOAuthProvider>
     
 

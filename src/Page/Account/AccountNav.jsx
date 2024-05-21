@@ -7,35 +7,39 @@ import { ShopContext } from '../../Context/ShopContext';
 
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import { AuthContext } from '../../Context/AuthContext';
 
-
+//{profile}
 const AccountNav = ({profile}) => {
   const {setExp} = useContext(ShopContext);
+//  const {profile} = useContext(AuthContext);
+
   const navigate = useNavigate()
 
-  const [loading , setLoading] = useState(false)
+/*   const [loading , setLoading] = useState(false)
   useEffect(()=>{
       setTimeout(() => {
           setLoading(true)
       }, 500);
 
-  },[])
+  },[]) */
 
   const logout = (e) =>{
     e.preventDefault();
     localStorage.setItem("access-token", '')
     localStorage.setItem("refresh-token", '')
     localStorage.setItem("refresh-token-exp", '')
+    localStorage.setItem("profile", '')
     setExp(false)
     navigate("/account/login");
   }
 
-  return (profile&&loading) ? (
+  return (profile) ? (
   <div className='account_nav'>
     <div className='account_info'>
-      <p>{profile.Name}</p>
+      <p>{profile.name}</p>
       <div className='account_info_email'>
-        <AiOutlineMail/> <span>{profile.EmailID}</span>
+        <AiOutlineMail/> <span>{profile.email}</span>
       </div>
     </div>
     <div className='account_nav_opt'>

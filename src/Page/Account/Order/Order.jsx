@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from 'react'
+import React, {  useContext, useEffect, useState } from 'react'
 import AccountNav from '../AccountNav'
 import './Order.css'
 import { useNavigate } from 'react-router-dom';
@@ -9,30 +9,33 @@ import AccountBack from '../AccountBack';
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import useProfile from '../../../hook/useProfile';
+import { AuthContext } from '../../../Context/AuthContext';
 
 const Order = () => {
     const {profile} = useProfile()
 
+    const {authProfile} = useContext(AuthContext)
+    
     const {order, login} = useOrder()
 
-    const [loading , setLoading] = useState(false)
+/*     const [loading , setLoading] = useState(false)
     useEffect(()=>{
         setTimeout(() => {
             setLoading(true)
         }, 500);
 
-    },[])
+    },[]) */
     
     const navigate = useNavigate()
 
-  return (login && loading)?(
+  return (login)?(
 
     <div className='account_main_wrapper'>
 
         <AccountBack url={'/account'} text={'Order Record'}/>
 
         <div className='account_nav_wrapper'>
-            <AccountNav profile={profile}/>
+            <AccountNav profile={authProfile}/>
         </div>
 
         <div className='order_main_wrapper'>
@@ -68,7 +71,7 @@ const Order = () => {
         <AccountBack url={'/account'} text={'Order Record'}/>
 
         <div className='account_nav_wrapper'>
-            <AccountNav/>
+            <AccountNav profile={authProfile}/>
         </div>
 
         <div className='order_main_wrapper'>

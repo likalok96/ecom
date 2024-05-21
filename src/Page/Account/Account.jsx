@@ -1,15 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './Account.css'
 import AccountNav from './AccountNav';
 import useProfile from '../../hook/useProfile';
+import { AuthContext } from '../../Context/AuthContext';
 
 
 const Account = () => {
 
     const navigate = useNavigate();
 
-    const {profile} = useProfile()
+    //const {profile} = useProfile()
+  const {authProfile} = useContext(AuthContext)
 
     useEffect( ()=>{
 
@@ -23,7 +25,7 @@ const Account = () => {
   return (
     <div className='account_outter_wrapper'>
       <div className='account_main_wrapper'>
-        { <AccountNav profile={profile}/>}
+        { <AccountNav profile={authProfile}/>}
 
       </div>
     </div>

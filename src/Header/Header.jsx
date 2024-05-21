@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Dropdown from '../Header/Dropdown/Dropdown';
 import StickyNav from './StickyNav/StickyNav';
 import MainMune from '../Component/MainMune/MainMune';
+//{showMenu, setShowMenu, show, setShow,showSearch, setShowSearch}
+const Header = () => {
 
-const Header = ({showMenu, setShowMenu, show, setShow,showSearch, setShowSearch}) => {
+  const [show, setShow] = useState('');
+    const [showMenu, setShowMenu] = useState(false)
+    const [showSearch, setShowSearch] = useState(false)
   return (
     <>
         <StickyNav setShow={setShow} show={show} showMenu={showMenu} setShowMenu={setShowMenu} setShowSearch={setShowSearch} showSearch={showSearch}/>

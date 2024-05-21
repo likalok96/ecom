@@ -22,8 +22,8 @@ const useLogin = () => {
               localStorage.setItem("access-token", res.data.accessToken)
               localStorage.setItem("refresh-token", res.data.Token)
               localStorage.setItem("refresh-token-exp", jwt_decode(res.data.Token).exp)
+              Promise.resolve(localStorage.setItem("profile", JSON.stringify(res.data.profile))).then(navigate("/account",{ state: {location} }))
               
-              navigate("/account",{ state: {location} })
 
           } else {
               alert(res.data.Message)

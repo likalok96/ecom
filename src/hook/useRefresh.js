@@ -34,6 +34,10 @@ const useRefresh = ()=>{
                     
                         if(res.data.Status==="Auth Expired"){
                             navigate("/account/login",{ state: {location} })
+                            localStorage.setItem("access-token", '')
+                            localStorage.setItem("refresh-token", '')
+                            localStorage.setItem("refresh-token-exp", '')
+                            localStorage.setItem("profile", '')
 
                         }
                         else{

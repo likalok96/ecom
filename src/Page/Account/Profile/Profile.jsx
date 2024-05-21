@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Profile.css'
 import AccountNav from '../AccountNav'
 import './Profile.css'
 import useProfile from '../../../hook/useProfile'
 import AccountBack from '../AccountBack'
+import { AuthContext } from '../../../Context/AuthContext'
 
 
 const Profile = () => {
 
     const { profile, setProfile, updateProfile} = useProfile()
+    const {authProfile} = useContext(AuthContext)
+
 
   return  (
     <div className='account_main_wrapper'>
@@ -16,7 +19,7 @@ const Profile = () => {
         <AccountBack url={'/account'} text={'My Profile'} />
 
         <div className='account_nav_wrapper'>
-            <AccountNav profile={profile}/>
+            <AccountNav profile={authProfile}/>
         </div>
 
         <div className='profile_main_wrapper'>

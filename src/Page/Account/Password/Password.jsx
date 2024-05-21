@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Password.css'
 import AccountNav from '../AccountNav';
 import useProfile from '../../../hook/useProfile';
 import AccountBack from '../AccountBack';
+import { AuthContext } from '../../../Context/AuthContext';
 
 const Password = () => {
 
     const {profile, confirm, setProfile, setConfirm, updatePassword} = useProfile()
+
+    const {authProfile} = useContext(AuthContext)
+
 
   return (
     <div className='account_main_wrapper'>
@@ -14,7 +18,7 @@ const Password = () => {
         <AccountBack url={'/account'} text={'Reset Password'} />
         
         <div className='account_nav_wrapper'>
-            <AccountNav profile={profile}/>
+            <AccountNav profile={authProfile}/>
         </div>
         <div className='profile_main_wrapper'>
             <form className='profile_form'>

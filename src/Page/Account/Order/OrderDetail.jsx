@@ -8,6 +8,7 @@ import useCheckout from '../../../hook/useCheckout'
 import ProductCard from '../../../Component/ProductCard/ProductCard'
 import AccountBack from '../AccountBack'
 import useProfile from '../../../hook/useProfile'
+import { AuthContext } from '../../../Context/AuthContext'
 
 const OrderDetail = () => {
 
@@ -15,6 +16,7 @@ const OrderDetail = () => {
     
     const {profile} = useProfile()
 
+    const {authProfile} = useContext(AuthContext)
     const {orderItem} = useOrderDetail()
 
     const item = {items:orderItem}
@@ -30,7 +32,7 @@ const OrderDetail = () => {
         <AccountBack text={'Order Detail'} url={'/account/order'} />
 
         <div className='account_nav_wrapper'>
-            <AccountNav profile={profile}/>  
+            <AccountNav profile={authProfile}/>  
         </div>
         {orderItem.length>0?
         <div className='order_main_wrapper '>

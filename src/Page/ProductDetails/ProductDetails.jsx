@@ -45,7 +45,7 @@ const ProductDetails = () => {
         setFilteredList(productList.filter((prd)=>prd.name.toLowerCase().indexOf(product.toLowerCase())!==-1))
         console.log(filteredList)
         }
-    },[productList,brand,filteredList,product])
+    },[productList])
 
     console.log(product.toLowerCase())
     console.log(filteredList)
