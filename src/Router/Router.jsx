@@ -25,6 +25,7 @@ import Wishlist from '../Page/Wishlist/Wishlist';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import AuthContextProvider from '../Context/AuthContext';
+import AccountLayout from '../Page/Account/AccountLayout/AccountLayout';
 
 
 const google_client_id = '1087005348930-mljeqbal7qquh9kssbof6hvmeb9nagnt.apps.googleusercontent.com'
@@ -55,14 +56,15 @@ console.log('route')
                     <Route path='/cart' element={<Cart />} />
                     <Route path='/wishlist' element={<Wishlist />} />
                     <Route path='/cartmenu' element={<MenuCart />} />
-                  
-                    <Route path='/account'>
-                      <Route path='login' element={<Login />} />
-                      <Route path='' element={<Account />} />
-                      <Route path='order' element={<Order />} />
-                      <Route path='order/:order_id' element={<OrderDetail />} />
-                      <Route path='profile' element={<Profile />} />
-                      <Route path='password' element={<Password />} />
+
+                    <Route path='/account/login' element={<Login />} />
+                    <Route path='/account' element={<AccountLayout/>}>
+                        <Route path=''  />
+                        <Route path='order' element={<Order />} />
+                        <Route path='order/:order_id' element={<OrderDetail />} />
+                        <Route path='profile' element={<Profile />} />
+                        <Route path='password' element={<Password />} />
+                      
                     </Route>
                   
 

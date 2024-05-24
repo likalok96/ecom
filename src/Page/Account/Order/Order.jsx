@@ -10,6 +10,7 @@ import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import useProfile from '../../../hook/useProfile';
 import { AuthContext } from '../../../Context/AuthContext';
+import AccountLayout from '../AccountLayout/AccountLayout';
 
 const Order = () => {
     const {profile} = useProfile()
@@ -17,6 +18,7 @@ const Order = () => {
     const {authProfile} = useContext(AuthContext)
     
     const {order, login} = useOrder()
+    console.log(order)
 
 /*     const [loading , setLoading] = useState(false)
     useEffect(()=>{
@@ -29,15 +31,14 @@ const Order = () => {
     const navigate = useNavigate()
 
   return (login)?(
-
+/* 
     <div className='account_main_wrapper'>
 
         <AccountBack url={'/account'} text={'Order Record'}/>
 
         <div className='account_nav_wrapper'>
             <AccountNav profile={authProfile}/>
-        </div>
-
+        </div> */
         <div className='order_main_wrapper'>
             {order.length>0 ?
             (
@@ -61,38 +62,32 @@ const Order = () => {
 
         </div>
 
-
-    </div>
+/*     </div> */
   )
   :
   (
-    <div className='account_main_wrapper'>
+/*     <div className='account_main_wrapper'>
 
         <AccountBack url={'/account'} text={'Order Record'}/>
 
         <div className='account_nav_wrapper'>
             <AccountNav profile={authProfile}/>
-        </div>
-
+        </div> */
         <div className='order_main_wrapper'>
             
-            
-                <div className='order_wrapper'>
-                    <div className='order_title order_spacing'>
-                        <p>Order ID</p>
-                        <p>Shipping Details</p>
-                        <p>Order Time</p>
-                        <p>Total Price</p>
-                    </div>
-                    {<Skeleton height={100} count={5} />}
+            <div className='order_wrapper'>
+                <div className='order_title order_spacing'>
+                    <p>Order ID</p>
+                    <p>Shipping Details</p>
+                    <p>Order Time</p>
+                    <p>Total Price</p>
                 </div>
+                {<Skeleton height={100} count={5} />}
+            </div>
             
-            
-
         </div>
 
-
-    </div>
+/*     </div> */
 )
 }
 

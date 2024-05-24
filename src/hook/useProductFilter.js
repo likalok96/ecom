@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { useParams,useSearchParams  } from 'react-router-dom'
 import { ShopContext } from '../Context/ShopContext'
 import { useQuery } from '@tanstack/react-query'
+import { getUniqueKey } from '../utils/ProductFn/getUniqueKey'
 
 const useProductFilter = () => {
 
@@ -9,12 +10,6 @@ const useProductFilter = () => {
 
     const productQuery = useQuery({queryKey: ['productList'],queryFn: getProduct});
     const productList =   productQuery.data
-
-/*     productList?.map((prd)=>{
-        prd.search_text = prd.brand + prd.name
-        prd.search = prd.category + prd.brand
-        prd.price_cal = prd.price.replace('.00','')
-    }) */
 
     const {category,brand} = useParams();
 
@@ -26,16 +21,16 @@ const useProductFilter = () => {
         (searchParams.get('search') ? prd.search_text.toLowerCase().indexOf(searchParams.get('search').toLowerCase())!==-1 : true)
     )
 
-    const unique_key = (key) => {
+/*     const unique_key = (key) => {
         let unique = [...new Set(productList2?.map(item => item[key].split(',')))];
         let unique2 = [].concat.apply([], unique);
         let filter_cate = [...new Set(unique2.map(item => item))];
         return filter_cate
     }
+ */
 
-
-    let filter_cate = unique_key('category')
-    let filter_brand = unique_key('brand')
+    let filter_cate = getUniqueKey(productList2,'category')
+    let filter_brand = getUniqueKey(productList2,'brand')
     
 
     const filterProduct = (productList,searchParams,key) => {

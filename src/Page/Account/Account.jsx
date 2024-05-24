@@ -11,7 +11,7 @@ const Account = () => {
     const navigate = useNavigate();
 
     //const {profile} = useProfile()
-  const {authProfile} = useContext(AuthContext)
+    const {authProfile} = useContext(AuthContext)
 
     useEffect( ()=>{
 

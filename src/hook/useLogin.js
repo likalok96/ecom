@@ -1,4 +1,4 @@
-import {   useState } from 'react'
+import {   useContext, useState } from 'react'
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useGoogleLogin   } from '@react-oauth/google';
@@ -17,14 +17,14 @@ const useLogin = () => {
   const login = (e)=> {
       e.preventDefault()
       axios.post(process.env.REACT_APP_API_URL + "/account/login",user)
-      .then(res=>{
+      .then(async res=>{
           if(res.data.Status ==='Success') {
               localStorage.setItem("access-token", res.data.accessToken)
               localStorage.setItem("refresh-token", res.data.Token)
               localStorage.setItem("refresh-token-exp", jwt_decode(res.data.Token).exp)
-              Promise.resolve(localStorage.setItem("profile", JSON.stringify(res.data.profile))).then(navigate("/account",{ state: {location} }))
-              
-
+              //Promise.resolve(localStorage.setItem("profile", JSON.stringify(res.data.profile))).then(navigate("/account",{ state: {location} }))
+              localStorage.setItem("profile", JSON.stringify(res.data.profile))//.then(navigate("/account",{ state: {location} }))
+              navigate("/account",{ state: {location} })
           } else {
               alert(res.data.Message)
           }

@@ -53,11 +53,12 @@ const ShopContextProvider  = (props) => {
     const getProduct = ()=>{    
       return axios.get(process.env.REACT_APP_API_URL + "/api/get/",{headers:{'Pragma': 'no-cache','Cache-control':'no-cache'}})
       .then((response)=>{
-         const result = response.data.map((item)=>{
-           const str = item.brand + ' ' + item.name
+         //const result = 
+         response.data.forEach((item)=>{
+/*            const str = item.brand + ' ' + item.name
           item.image = prd_img[str]
-          item.price_cal = item.price
-         // createProduct(item)
+          item.price_cal = item.price */
+          createProduct(item)
           
         })
         //console.log(result)

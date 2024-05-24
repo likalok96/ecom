@@ -31,7 +31,7 @@ const FilterNav = ({list,feild,handleClick,query, setCurrentPage}) => {
                 {list?.map((s)=>
                     <div className='product_page_filter_value' key={s}>
                     
-                        <input type='radio' onClick={(e)=>{handleClickReset(e,feild)}} checked={query?.get(feild)?.includes(s)} value={s} id={s}  name={s} readOnly={true}/>
+                        <input type='radio' onClick={(e)=>{handleClickReset(e,feild)}} checked={query?.get(feild)?.includes(s)||false} value={s} id={s}  name={s} readOnly={true}/>
                         <label htmlFor={s}>{s.replace('_',' ')}</label>
                     
                     </div>

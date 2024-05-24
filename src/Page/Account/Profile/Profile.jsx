@@ -14,13 +14,13 @@ const Profile = () => {
 
 
   return  (
-    <div className='account_main_wrapper'>
+/*     <div className='account_main_wrapper'>
 
         <AccountBack url={'/account'} text={'My Profile'} />
 
         <div className='account_nav_wrapper'>
             <AccountNav profile={authProfile}/>
-        </div>
+        </div> */
 
         <div className='profile_main_wrapper'>
             <form className='profile_form'>
@@ -38,8 +38,8 @@ const Profile = () => {
 
         </div>
 
-    </div>
-        
+/*     </div>
+ */        
           )
 }
 

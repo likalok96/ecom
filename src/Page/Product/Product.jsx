@@ -14,10 +14,10 @@ import 'react-loading-skeleton/dist/skeleton.css'
 const Product = () => {
 
     const { itemOffset, itemsPerPage, currentPage, handlePageChange, setItemPerPage, setCurrentPage ,sort, setSort,filteredList,
-        category, brand,  filter_cate, filter_brand,searchParams,  handleClick} = useProductPage()
+        category, brand,  filter_cate, filter_brand,searchParams,  handleClick,productQuery} = useProductPage()
 
-
-  return ((filteredList?.length>0  )?
+//filteredList?.length>0
+  return ((productQuery.isFetched )?
     <div className='product_page_wrapper'>
         <div>
             {!category && <FilterNav list={filter_cate} feild='category' handleClick={handleClick} query={searchParams} setCurrentPage={setCurrentPage}/>}

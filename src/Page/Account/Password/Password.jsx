@@ -4,6 +4,7 @@ import AccountNav from '../AccountNav';
 import useProfile from '../../../hook/useProfile';
 import AccountBack from '../AccountBack';
 import { AuthContext } from '../../../Context/AuthContext';
+import AccountLayout from '../AccountLayout/AccountLayout';
 
 const Password = () => {
 
@@ -13,13 +14,13 @@ const Password = () => {
 
 
   return (
-    <div className='account_main_wrapper'>
+/*     <div className='account_main_wrapper'>
 
         <AccountBack url={'/account'} text={'Reset Password'} />
         
         <div className='account_nav_wrapper'>
             <AccountNav profile={authProfile}/>
-        </div>
+        </div> */
         <div className='profile_main_wrapper'>
             <form className='profile_form'>
                 <p>New Password</p>
@@ -33,9 +34,8 @@ const Password = () => {
             </form>
 
         </div>
-
-    </div>
-        
+/*     </div>
+ */        
           )
 }
 

@@ -5,42 +5,36 @@ import useProductSort from './useProductSort'
 
 const useProductPage = () => {
 
-
     let {category, brand, productList, filter_cate, filter_brand, filteredList, handleClick, searchParams, setSearchParams,productQuery} = useProductFilter()
 
     const handleClickReset = (e,feild) =>{
         setCurrentPage(0)
         handleClick(e,feild)
-        
     }
 
     const {sortProduct} = useProductSort()
 
     const [sort, setSortState] = useState(searchParams.get('sort') || 'Manual')
 
-    const setSort = (value)=>{
-        searchParams.set('sort',value)
-        setSearchParams(searchParams)
-        setSortState(value)
-        
+    const setSearchParamsState = (params,setState)=> {
+        return (value)=>{
+            searchParams.set(params,value)
+            setSearchParams(searchParams)
+            setState(value)
+        }
     }
+
+    const setSort = setSearchParamsState('sort',setSortState)
+
     if(filteredList) filteredList = sortProduct(filteredList,sort)
 
     const [itemsPerPage ,setItemPerPageState] = useState(Number(searchParams.get('limit')) || 10);
 
-    const setItemPerPage = (value)=>{
-        searchParams.set('limit',value)
-        setSearchParams(searchParams)
-        setItemPerPageState(value)
-    }
+    const setItemPerPage = setSearchParamsState('limit',setItemPerPageState)
 
     const [currentPage, setCurrentPageState] = useState(Number(searchParams.get('page')) ?? 0);
 
-    const setCurrentPage = (value)=>{
-        searchParams.set('page',value)
-        setSearchParams(searchParams)
-        setCurrentPageState(value)
-    }
+    const setCurrentPage = setSearchParamsState('page',setCurrentPageState)
 
     const pageCount = Math.ceil(filteredList?.length / itemsPerPage) ?? 1
 

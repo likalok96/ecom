@@ -7,7 +7,6 @@ const AuthContextProvider = (props) => {
 //    const {axiosInstance} = useRefresh()
     const profile = localStorage.getItem('profile')
     //const authProfile = JSON.parse( profile|| null)
-
     const [authProfile, setAuthProfile] = useState(JSON.parse( profile || null)); 
 
      useEffect(()=>{
@@ -15,7 +14,7 @@ const AuthContextProvider = (props) => {
         !authProfile && setAuthProfile(JSON.parse( profile || null))
         
 // eslint-disable-next-line
-    },[]) 
+    },[profile])
 
     //const authProfile = JSON.parse( profile || null)  
 
@@ -41,7 +40,7 @@ const AuthContextProvider = (props) => {
 // eslint-disable-next-line
     },[]) */
 
-    const contextValue = {authProfile};
+    const contextValue = {authProfile,setAuthProfile};
 
 
   return (

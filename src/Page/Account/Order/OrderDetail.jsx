@@ -27,14 +27,14 @@ const OrderDetail = () => {
 
 
   return (
-    <div className='account_main_wrapper'>
+/*     <div className='account_main_wrapper'>
 
         <AccountBack text={'Order Detail'} url={'/account/order'} />
 
         <div className='account_nav_wrapper'>
             <AccountNav profile={authProfile}/>  
-        </div>
-        {orderItem.length>0?
+        </div> */
+        orderItem.length>0?
         <div className='order_main_wrapper '>
             
             <div className='cart_border'>
@@ -66,11 +66,11 @@ const OrderDetail = () => {
             
         </div>
         :
-        <div>loading</div>}
+        <div>loading</div>
         
 
-    </div>
-    )
+/*     </div>*/    
+)
 }
 
 export default OrderDetail
